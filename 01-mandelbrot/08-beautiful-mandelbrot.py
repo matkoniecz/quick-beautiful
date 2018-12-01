@@ -18,7 +18,7 @@ def get_color(x, y, X, Y, WIDTH, HEIGHT):
     return (0, 0, 0)
 
 
-def mandebrot(WIDTH, HEIGHT, X, Y, filename):
+def mandebrot(X, Y, WIDTH, HEIGHT, filename):
     list_of_pixels = []
     for _ in range(WIDTH*HEIGHT):
         list_of_pixels.append((255, 0, 0))
@@ -34,8 +34,8 @@ def mandebrot(WIDTH, HEIGHT, X, Y, filename):
 
 WIDTH = 750
 HEIGHT = 750
-mandebrot(WIDTH, HEIGHT, (-1.6, 0.6), (-1.1, 1.1), "1.png")
-mandebrot(WIDTH, HEIGHT, (-1.0, 0), (-1.1, -0.1), "2.png")
-mandebrot(WIDTH, HEIGHT, (-0.7, -0.4), (-0.75, -0.45), "3.png")
-mandebrot(WIDTH, HEIGHT, (-0.6, -0.5), (-0.7, -0.6), "4.png")
-mandebrot(WIDTH, HEIGHT, (-0.55, -0.5), (-0.65, -0.6), "5.png")
+mandebrot((-1.6, 0.6), (-1.1, 1.1), WIDTH, HEIGHT, "1.png")
+mandebrot((-1.0, 0), (-1.1, -0.1), WIDTH, HEIGHT, "2.png")
+mandebrot((-0.7, -0.4), (-0.75, -0.45), WIDTH, HEIGHT, "3.png")
+mandebrot((-0.6, -0.5), (-0.7, -0.6), WIDTH, HEIGHT, "4.png")
+mandebrot((-0.55, -0.5), (-0.7, -0.65), WIDTH, HEIGHT, "5.png")
