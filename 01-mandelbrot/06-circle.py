@@ -17,11 +17,8 @@ def get_color(x, y):
 
 width = 500
 height = 500
-list_of_pixels = []
-for _ in range(width*height):
-    list_of_pixels.append((255, 0, 0))
-im = Image.new("RGB", (width, height))
-im.putdata(list_of_pixels)
+# https://pillow.readthedocs.io/en/latest/reference/Image.html
+im = Image.new("RGB", (width, height), (255, 0, 0))
 pixels = im.load()
 
 for x in range(width):
@@ -29,3 +26,4 @@ for x in range(width):
         pixels[x, y] = get_color(x, y)
 
 im.save("generated.png")
+im.show()

@@ -19,10 +19,8 @@ def get_color(x, y, X, Y, WIDTH, HEIGHT):
 
 
 def mandebrot(X, Y, WIDTH, HEIGHT, filename):
-    list_of_pixels = []
-    for _ in range(WIDTH*HEIGHT):
-        list_of_pixels.append((255, 0, 0))
-    im = Image.new("RGB", (WIDTH, HEIGHT))
+    # https://pillow.readthedocs.io/en/latest/reference/Image.html
+    im = Image.new("RGB", (WIDTH, HEIGHT), (255, 0, 0))
     pixels = im.load()
 
     for x in range(WIDTH):
@@ -30,6 +28,7 @@ def mandebrot(X, Y, WIDTH, HEIGHT, filename):
             pixels[x, y] = get_color(x, y, X, Y, WIDTH, HEIGHT)
 
     im.save(filename)
+    im.show()
 
 
 WIDTH = 750

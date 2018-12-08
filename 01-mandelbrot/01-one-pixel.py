@@ -1,8 +1,7 @@
 from PIL import Image
 width = 1
 height = 1
-list_of_pixels = [(255, 0, 0)]
-# https://pillow.readthedocs.io/en/5.3.x/reference/Image.html
-im = Image.new("RGB", (width, height))
-im.putdata(list_of_pixels)
+# https://pillow.readthedocs.io/en/latest/reference/Image.html
+im = Image.new("RGB", (width, height), (255, 0, 0))
 im.save("generated.png")
+im.show()
