@@ -19,12 +19,14 @@ def dwarf(draw, x0, y0):
     hat(draw, x0, x1, head_x, head_y, r)
     beard(draw, x0, x1, head_x, head_y, r)
 
+
 def grass(draw, width, height, grass_height):
     x0 = 0
-    y0 = height - 1 
+    y0 = height - 1
     x1 = width - 1
     y1 = height - grass_height
     draw.rectangle(((x0, y0), (x1, y1)), fill=(20, 230, 20))
+
 
 def house(draw, height, width):
     x0 = 500
@@ -32,6 +34,7 @@ def house(draw, height, width):
     x1 = x0 + 300
     y1 = y0 - 250
     draw.rectangle(((x0, y0), (x1, y1)), fill=(230, 150, 100))
+
 
 width = 2000
 height = 400

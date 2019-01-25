@@ -1,6 +1,7 @@
 from PIL import Image, ImageDraw
 import random
 
+
 def hat(draw, x0, x1, head_x, head_y, r):
     draw.polygon(((x0 - 15, head_y), (x1 + 15, head_y), (head_x, head_y - 30 - random.randint(0, 4*r))), fill=(240, 30, 20))
 

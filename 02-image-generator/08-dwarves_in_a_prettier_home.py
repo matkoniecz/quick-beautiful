@@ -18,16 +18,19 @@ def dwarf(draw, x0, y0, figure_height):
     hat(draw, x0, x1, head_x, head_y, r)
     beard(draw, x0, x1, head_x, head_y, r)
 
+
 def grass(draw, width, height, grass_height):
     x0 = 0
-    y0 = height - 1 
+    y0 = height - 1
     x1 = width - 1
     y1 = height - grass_height
     draw.rectangle(((x0, y0), (x1, y1)), fill=(20, 230, 20))
 
+
 def house_wall(draw, house_height, house_width, left_house_wall_x, house_base_y):
     coordinates = ((left_house_wall_x, house_base_y), (left_house_wall_x + house_width, house_base_y - house_height))
     draw.rectangle(coordinates, fill=(230, 150, 100))
+
 
 def house_door(draw, house_height, house_width, left_house_wall_x, house_base_y, figure_height):
     door_height = figure_height * 1.2
