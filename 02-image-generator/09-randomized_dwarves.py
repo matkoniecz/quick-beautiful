@@ -68,5 +68,5 @@ for i in range(random.randint(1, 40)):
     y = random.randint(height - grass_height, height)
     dwarf(draw, x, y, figure_height)
 
-im.save("krasnoludki.png")
+im.save("dwarves.png")
 im.show()
