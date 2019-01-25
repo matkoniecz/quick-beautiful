@@ -13,6 +13,8 @@ Standard hello world example.
 
 ## Image generation
 
+![dwarves.png](dwarves.png)
+
 # Bonus
 
 Materials showing interesting cases where programming is necessary:
