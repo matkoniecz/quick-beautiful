@@ -1,6 +1,6 @@
-Programming exercises - tutorial material for work with a beginner. This exercises should be simple and give a properly impressive results.
+Programming exercises - tutorial material for work with a beginner. I am searching for exercises that can be solved with a simple code and give properly impressive results.
 
-Code in this repository is a mix of notes, used  ideas and materials left as a feedback for the future.
+Code in this repository is a mix of notes, used ideas and materials left as a feedback for the future.
 
 # Exercises
 
