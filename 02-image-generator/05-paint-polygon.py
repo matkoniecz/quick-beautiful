@@ -18,13 +18,6 @@ y = 94
 r = 30
 draw.ellipse(((x-r, y-r), (x+r, y+r)), fill=(0, 255, 0))
 
-for i in range(10):
-    x0 = i * 20
-    y0 = i * 20
-    x1 = x0 + 10
-    y1 = y0 + 10
-    draw.rectangle(((x0, y0), (x1, y1)), fill=(255, 255, 0))
-
 draw.polygon(((10, 10), (10, 190), (157, 15)), fill=(50, 200, 250))
 
 im.save("generated.png")

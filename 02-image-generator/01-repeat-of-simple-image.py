@@ -17,4 +17,4 @@ pixels = im.load()
 pixels[10, 10] = (0, 255, 0)
 
 im.save("generated.png")
-im.show()  # is it working on Windows?
+im.show()  # it may not work in rare cases, but generally very, very useful
