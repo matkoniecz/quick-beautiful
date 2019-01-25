@@ -1,8 +1,17 @@
+Programming exercises - tutorial material for work with a beginner. This exercises should be simple and give a properly impressive results.
+
+Code in this repository is a mix of notes, used  ideas and materials left as a feedback for the future.
+
 # Exercises
+
+## Hello world
+Standard hello world example.
 
 ## Mandelbrot visualisation
 
 ![mandelbrot.png](mandelbrot.png)
+
+## Image generation
 
 # Bonus
 
