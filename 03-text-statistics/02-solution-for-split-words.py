@@ -1,2 +1,2 @@
 text = "Ala ma żółtego kota"
-print(text.split(" "))
+print(text.split())
