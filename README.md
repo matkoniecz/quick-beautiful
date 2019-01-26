@@ -30,3 +30,5 @@ Materials showing interesting cases where programming is necessary:
 ## Reformat code to follow Python coding stadards
 
 `autopep8 --in-place --recursive .`
+
+[PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
