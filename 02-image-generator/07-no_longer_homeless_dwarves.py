@@ -28,7 +28,7 @@ def grass(draw, width, height, grass_height):
     draw.rectangle(((x0, y0), (x1, y1)), fill=(20, 230, 20))
 
 
-def house(draw, height, width):
+def house(draw, height, width, grass_height):
     x0 = 500
     y0 = height - grass_height / 2
     x1 = x0 + 300
@@ -44,7 +44,7 @@ im = Image.new("RGB", (width, height), (110, 200, 110))
 draw = ImageDraw.Draw(im)
 grass_height = int(height / 3)
 grass(draw, width, height, grass_height)
-house(draw, height, width)
+house(draw, height, width, grass_height)
 
 
 x0 = 20
