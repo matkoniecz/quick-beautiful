@@ -32,3 +32,9 @@ Materials showing interesting cases where programming is necessary:
 `autopep8 --in-place --recursive .`
 
 [PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
+
+## Run all Python scripts in one folder
+
+`find . -maxdepth 1 -type f -name "*.py" -exec python3 {} \;`
+
+Command based on one by [Jim Lewis](https://stackoverflow.com/a/10523492/4130619)
