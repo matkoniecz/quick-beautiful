@@ -27,4 +27,6 @@ Materials showing interesting cases where programming is necessary:
 
 # Maintenance commands
 
+## Reformat code to follow Python coding stadards
+
 `autopep8 --in-place --recursive .`
