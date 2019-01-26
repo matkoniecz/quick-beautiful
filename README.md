@@ -9,9 +9,13 @@ Standard hello world example.
 
 ## Mandelbrot visualisation
 
+Generation of beautiful Mandelbrot fractal. Demonstrates one of cases where vast computing power of a computer allows to achieve results unfeasible with human computing power due to a cost differences alone.
+
 ![mandelbrot.png](mandelbrot.png)
 
 ## Image generation
+
+Making image out of simple shapes. For example group of dwarves in from of their home. Excellent situation to demonstarte why code reuse using functions is useful.
 
 ![dwarves.png](dwarves.png)
 
