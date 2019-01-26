@@ -12,4 +12,5 @@ if version.parse(Image.PILLOW_VERSION) < version.parse("3.4"):
     print("see release notes in")
     print("https://pillow.readthedocs.io/en/latest/releasenotes/3.4.0.html#append-images-to-gif")
 else:
-    im1.save("out.gif", save_all=True, append_images=[im2, im3], duration=900, loop=0)
+    # done using https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html#saving
+    im1.save("out.gif", save_all=True, append_images=[im2, im3], duration=900)
