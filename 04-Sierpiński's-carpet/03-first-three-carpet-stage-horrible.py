@@ -1,11 +1,13 @@
 from PIL import Image
 from PIL import ImageDraw
 
+
 def make_hole(draw, x, y, section_size):
     hole_color = (255, 255, 255)
     corner = (x + section_size / 3, y + section_size / 3)
     opposite_corner = (x + section_size * 2/3, y + section_size * 2/3)
     draw.rectangle((corner, opposite_corner), fill=hole_color)
+
 
 size = 300
 carpet_color = (150, 0, 150)

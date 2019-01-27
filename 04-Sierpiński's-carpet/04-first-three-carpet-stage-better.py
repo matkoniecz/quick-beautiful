@@ -24,6 +24,7 @@ def make_carpet(levels):
     make_pattern(draw, 0, 0, size, levels)
     return carpet
 
+
 carpet_without_hole = make_carpet(0)
 carpet_with_first_hole = make_carpet(1)
 third_carpet = make_carpet(2)

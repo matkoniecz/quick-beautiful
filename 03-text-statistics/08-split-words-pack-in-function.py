@@ -1,9 +1,11 @@
 import string
 
+
 def text_into_word_array(text):
     for char in string.punctuation:
         text = text.replace(char, " ")
     return text.split()
+
 
 # note multiline string definition
 text = """Ojcze nasz, któryś jest w niebie
