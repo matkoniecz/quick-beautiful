@@ -1,4 +1,4 @@
-Programming exercises - tutorial material for work with a beginner. I am searching for exercises that can be solved with a simple code and give properly impressive results.
+Programming exercises - tutorial materials for work with a beginner. I am searching for exercises that can be solved with a simple code and give properly impressive results.
 
 Code in this repository is a mix of notes, used ideas and materials left as a feedback for the future.
 
@@ -38,3 +38,13 @@ Materials showing interesting cases where programming is necessary:
 `find . -maxdepth 1 -type f -name "*.py" -exec python3 {} \;`
 
 Command based on one by [Jim Lewis](https://stackoverflow.com/a/10523492/4130619)
+
+# Similar projects
+
+There are some similar projects with materials and ideas on topic of teaching programming to beginners with interesting miniprojects.
+
+Some of them have extensive explanations making the useful on their own for the beginner.
+
+If something is missing on this list, [let me know](https://github.com/matkoniecz/quick-beautiful/issues/new).
+
+Note that it is not list of tutorials - I am rather looking for lists of interesting project ideas, doable by a beginners.
