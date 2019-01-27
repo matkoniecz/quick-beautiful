@@ -28,13 +28,11 @@ def grass(draw, width, height, grass_height):
     draw.rectangle(((x0, y0), (x1, y1)), fill=(20, 230, 20))
 
 
-def house(draw, height, width, grass_height):
-    x0 = 500
-    y0 = height - grass_height / 2
-    x1 = x0 + 300
-    y1 = y0 - 250
-    draw.rectangle(((x0, y0), (x1, y1)), fill=(230, 150, 100))
-
+def house(draw, lower_left_house_anchor, house_size):
+    left_house_wall_x, left_house_wall_y = lower_left_house_anchor
+    wall_width, wall_height = house_size
+    coordinates = ((left_house_wall_x, left_house_wall_y), (left_house_wall_x + wall_width, left_house_wall_y - wall_height))
+    draw.rectangle(coordinates, fill=(230, 150, 100))
 
 width = 2000
 height = 400
@@ -43,8 +41,16 @@ im = Image.new("RGB", (width, height), (110, 200, 110))
 # https://pillow.readthedocs.io/en/latest/reference/ImageDraw.html
 draw = ImageDraw.Draw(im)
 grass_height = int(height / 3)
+figure_height = 80
 grass(draw, width, height, grass_height)
-house(draw, height, width, grass_height)
+
+house_width = min(300, width / 3)
+left_house_wall_x = width - house_width * 2
+house_base_y =height - grass_height / 2
+lower_left_house_anchor = (left_house_wall_x, house_base_y)
+house_height =  min(figure_height * 3, house_base_y * 0.8)
+house_size = (house_width, house_height)
+house(draw, lower_left_house_anchor, house_size)
 
 
 x0 = 20

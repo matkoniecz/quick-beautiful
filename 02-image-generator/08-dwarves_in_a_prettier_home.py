@@ -27,29 +27,45 @@ def grass(draw, width, height, grass_height):
     draw.rectangle(((x0, y0), (x1, y1)), fill=(20, 230, 20))
 
 
-def house_wall(draw, house_height, house_width, left_house_wall_x, house_base_y):
-    coordinates = ((left_house_wall_x, house_base_y), (left_house_wall_x + house_width, house_base_y - house_height))
+def house_wall(draw, lower_left_house_anchor, wall_size):
+    left_house_wall_x, left_house_wall_y = lower_left_house_anchor
+    wall_width, wall_height = wall_size
+    coordinates = ((left_house_wall_x, left_house_wall_y), (left_house_wall_x + wall_width, left_house_wall_y - wall_height))
     draw.rectangle(coordinates, fill=(230, 150, 100))
 
+def house_door(draw, lower_left_house_anchor, door_size):
+    left_house_wall_x, house_base_y = lower_left_house_anchor
+    door_width, door_height = door_size
+    lower_left = (left_house_wall_x + door_width / 2, house_base_y)
+    upper_right = (left_house_wall_x + door_width  * 1.5, house_base_y - door_height)
+    draw.rectangle((lower_left, upper_right), fill=(200, 120, 90))
 
-def house_door(draw, house_height, house_width, left_house_wall_x, house_base_y, figure_height):
-    door_height = figure_height * 1.2
-    door_width = door_height / 1.6
-    draw.rectangle(((left_house_wall_x + house_width/10, house_base_y), (left_house_wall_x + house_width/10 + door_width, house_base_y - door_height)), fill=(200, 120, 90))
+def house_roof(draw, lower_left_roof_anchor, roof_size):
+    left_roof_anchor_x, left_roof_anchor_y = lower_left_roof_anchor
+    roof_width, roof_height = roof_size
+    lower_left = (left_roof_anchor_x, left_roof_anchor_y)
+    lower_right = (left_roof_anchor_x + roof_width, left_roof_anchor_y)
+    roof_top = (left_roof_anchor_x + roof_width/2, left_roof_anchor_y - roof_height)
+    draw.polygon((lower_left, lower_right, roof_top), fill=(240, 60, 60))
 
-def house_roof(draw, house_height, house_width, left_house_wall_x, house_base_y):
-    draw.polygon(((left_house_wall_x - 15, house_base_y - house_height), (left_house_wall_x + house_width + 15, house_base_y - house_height), (left_house_wall_x + house_width/2, house_base_y - house_height*2)), fill=(240, 60, 60))
+def house(draw, lower_left_house_anchor, house_size):
+    house_width, house_height = house_size
+    wall_height = house_height * 2/3
+    left_house_wall_x, house_base_y = lower_left_house_anchor
+    roof_width_multiplier = 1.2
+    delta_roof_anchor = ((roof_width_multiplier * house_width) - house_width)/2
+    lower_left_roof_anchor = (left_house_wall_x - delta_roof_anchor, house_base_y - wall_height)
 
-def house(draw, height, width, grass_height, figure_height):
-    house_height = 250
-    house_width = 300
+    wall_size = (house_width, wall_height)
+    house_wall(draw, lower_left_house_anchor, wall_size)
 
-    left_house_wall_x = width - house_width * 2
-    house_base_y = height - grass_height / 2
-    house_height = 120
-    house_wall(draw, house_height, house_width, left_house_wall_x, house_base_y)
-    house_door(draw, house_height, house_width, left_house_wall_x, house_base_y, figure_height)
-    house_roof(draw, house_height, house_width, left_house_wall_x, house_base_y)
+    door_height = wall_height * 0.8
+    door_width = door_height * 0.4
+    door_size = (door_width, door_height)
+    house_door(draw, lower_left_house_anchor, door_size)
+
+    roof_size = (house_width * roof_width_multiplier, house_height - wall_height)
+    house_roof(draw, lower_left_roof_anchor, roof_size)
 
 width = 2000
 height = 400
@@ -60,7 +76,14 @@ draw = ImageDraw.Draw(im)
 grass_height = int(height / 3)
 figure_height = 80
 grass(draw, width, height, grass_height)
-house(draw, height, width, grass_height, figure_height)
+
+house_width = min(300, width / 3)
+left_house_wall_x = width - house_width * 2
+house_base_y =height - grass_height / 2
+lower_left_house_anchor = (left_house_wall_x, house_base_y)
+house_height =  min(figure_height * 3, house_base_y * 0.8)
+house_size = (house_width, house_height)
+house(draw, lower_left_house_anchor, house_size)
 
 
 x0 = 20
