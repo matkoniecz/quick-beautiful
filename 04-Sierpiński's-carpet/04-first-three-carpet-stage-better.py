@@ -12,7 +12,9 @@ def make_pattern(draw, x, y, section_size, remaining_levels):
     parts = 3
     for x_index in range(parts):
         for y_index in range(parts):
-            make_pattern(draw, x + section_size * x_index / parts, y + section_size * y_index / parts, section_size / 3, remaining_levels - 1)
+            min_x_in_section = x + section_size * x_index / parts
+            min_y_in_section = y + section_size * y_index / parts
+            make_pattern(draw, min_x_in_section, min_y_in_section, section_size / 3, remaining_levels - 1)
 
 def make_carpet(levels):
     size = 300
