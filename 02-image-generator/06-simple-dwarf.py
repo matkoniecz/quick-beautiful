@@ -19,9 +19,11 @@ def beard(draw, x0, x1, head_x, head_y, r):
     bottom = (head_x, head_y + 2*r)
     draw.polygon((left_top, right_top, bottom), fill=(240, 240, 240))
 
+
 def face(draw, head_x, head_y, r):
     circle_bounding_box = ((head_x-r, head_y-r), (head_x+r, head_y+r))
     draw.ellipse(circle_bounding_box, fill=(255, 182, 193))
+
 
 def dwarf(draw, x0, y0, figure_height):
     figure_width = figure_height/2.5

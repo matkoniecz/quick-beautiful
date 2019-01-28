@@ -1,6 +1,7 @@
 from PIL import Image
 from PIL import ImageDraw
 
+
 def save_animated_gif(filename, images, duration):
     # done using https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html#saving
     first_image = images[0]
@@ -29,6 +30,7 @@ def make_carpet(levels, size):
     make_pattern(draw, 0, 0, size, levels)
     return carpet
 
+
 size = 300
 first_carpet = make_carpet(0, size)
 carpets = []
@@ -36,4 +38,3 @@ for i in range(3):
     carpets.append(make_carpet(i + 1, size))
 
 save_animated_gif("Sierpiński's carpet.gif", carpets, 1200)
-

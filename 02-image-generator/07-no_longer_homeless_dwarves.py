@@ -48,6 +48,7 @@ def house(draw, lower_left_house_anchor, house_size):
     coordinates = (lower_left_house_anchor, right_upper_corner)
     draw.rectangle(coordinates, fill=(230, 150, 100))
 
+
 def landscape():
     width = 2000
     height = 400
@@ -67,7 +68,6 @@ def landscape():
     house_size = (house_width, house_height)
     house(draw, lower_left_house_anchor, house_size)
 
-
     x0 = 20
     y0 = height - int(grass_height / 2)
     dwarf(draw, x0, y0, figure_height)
@@ -77,5 +77,6 @@ def landscape():
 
     im.save("dwarves.png")
     im.show()
+
 
 landscape()

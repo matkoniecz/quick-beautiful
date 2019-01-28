@@ -84,6 +84,7 @@ def house(draw, lower_left_house_anchor, house_size):
     roof_size = (house_width  + 2 * roof_overhang_size, house_height - wall_height)
     house_roof(draw, lower_left_roof_anchor, roof_size)
 
+
 def landscape():
     width = 2000
     height = 400
@@ -103,7 +104,6 @@ def landscape():
     house_size = (house_width, house_height)
     house(draw, lower_left_house_anchor, house_size)
 
-
     x0 = 20
     y0 = height - int(grass_height / 2)
     dwarf(draw, x0, y0, figure_height)
@@ -113,5 +113,6 @@ def landscape():
 
     im.save("dwarves.png")
     im.show()
+
 
 landscape()

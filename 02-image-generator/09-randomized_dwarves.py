@@ -126,4 +126,5 @@ def landscape():
     im.save("dwarves.png")
     im.show()
 
+
 landscape()

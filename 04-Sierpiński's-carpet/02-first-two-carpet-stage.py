@@ -1,6 +1,7 @@
 from PIL import Image
 from PIL import ImageDraw
 
+
 def save_animated_gif(filename, images, duration):
     # done using https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html#saving
     first_image = images[0]

@@ -1,6 +1,7 @@
 from packaging import version
 from PIL import Image
 
+
 def save_animated_gif(filename, images, duration):
     # done using https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html#saving
     first_image = images[0]
@@ -15,6 +16,7 @@ def check_version():
     print("see release notes in")
     print("https://pillow.readthedocs.io/en/latest/releasenotes/3.4.0.html#append-images-to-gif")
     raise RuntimeError("upgrade pillow library, to at least 3.4")
+
 
 check_version()
 width = 300
