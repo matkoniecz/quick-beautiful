@@ -1,16 +1,19 @@
 from PIL import Image, ImageDraw
 
+
 def hat(draw, x0, x1, head_x, head_y, r):
     left_bottom = (x0 - 15, head_y)
     right_bottom = (x1 + 15, head_y)
     top = (head_x, head_y - 2*r)
     draw.polygon((left_bottom, right_bottom, top), fill=(240, 30, 20))
 
+
 def beard(draw, x0, x1, head_x, head_y, r):
     left_top = (x0, head_y + 10)
     right_top = (x1, head_y + 10)
     bottom = (head_x, head_y + 2*r)
     draw.polygon((left_top, right_top, bottom), fill=(240, 240, 240))
+
 
 def dwarf(draw, x0, y0, figure_height):
     figure_width = 30
@@ -39,12 +42,14 @@ def house_wall(draw, lower_left_house_anchor, wall_size):
     coordinates = ((left_house_wall_x, left_house_wall_y), (left_house_wall_x + wall_width, left_house_wall_y - wall_height))
     draw.rectangle(coordinates, fill=(230, 150, 100))
 
+
 def house_door(draw, lower_left_house_anchor, door_size):
     left_house_wall_x, house_base_y = lower_left_house_anchor
     door_width, door_height = door_size
     lower_left = (left_house_wall_x + door_width / 2, house_base_y)
     upper_right = (left_house_wall_x + door_width  * 1.5, house_base_y - door_height)
     draw.rectangle((lower_left, upper_right), fill=(200, 120, 90))
+
 
 def house_roof(draw, lower_left_roof_anchor, roof_size):
     left_roof_anchor_x, left_roof_anchor_y = lower_left_roof_anchor
@@ -53,6 +58,7 @@ def house_roof(draw, lower_left_roof_anchor, roof_size):
     lower_right = (left_roof_anchor_x + roof_width, left_roof_anchor_y)
     roof_top = (left_roof_anchor_x + roof_width/2, left_roof_anchor_y - roof_height)
     draw.polygon((lower_left, lower_right, roof_top), fill=(240, 60, 60))
+
 
 def house(draw, lower_left_house_anchor, house_size):
     house_width, house_height = house_size
