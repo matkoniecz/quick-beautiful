@@ -45,6 +45,8 @@ There are some similar projects with materials and ideas on topic of teaching pr
 
 Some of them have extensive explanations making the useful on their own for the beginner.
 
-If something is missing on this list, [let me know](https://github.com/matkoniecz/quick-beautiful/issues/new).
-
 Note that it is not list of tutorials - I am rather looking for lists of interesting project ideas, doable by a beginners.
+
+* [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
+
+If something is missing on this list, [let me know](https://github.com/matkoniecz/quick-beautiful/issues/new).
