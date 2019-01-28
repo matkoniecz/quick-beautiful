@@ -36,9 +36,9 @@ Materials showing interesting cases where programming is necessary:
 
 ## Detect code style issues
 
-`pylint **/*.py --include-naming-hint=y --variable-rgx=^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$ --argument-rgx=^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$`
+`pylint **/*.py --include-naming-hint=y --variable-rgx=^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$ --argument-rgx=^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$ --disable=C0103`
 
-It includes workaround for bug [#2018](https://github.com/PyCQA/pylint/issues/2018).
+It includes workaround for bug [#2018](https://github.com/PyCQA/pylint/issues/2018) and disables rule with many false positives (too eager to convert variables into constants).
 
 ## Run all Python scripts in one folder
 
