@@ -34,4 +34,3 @@ for i in range(levels - 1):
     durations.append(1200)
 durations[-1] *= 4
 first_carpet.save("Sierpiński's carpet.gif", save_all=True, append_images=carpets, duration=durations, loop=0)
-
