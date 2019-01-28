@@ -30,11 +30,14 @@ def mandebrot(X, Y, WIDTH, HEIGHT, filename):
     im.save(filename)
     im.show()
 
+def filename(zoom_level):
+    return "mandelbrot - zoom level " + str(zoom_level) + ".png"
+
 
 WIDTH = 750
 HEIGHT = 750
-mandebrot((-1.6, 0.6), (-1.1, 1.1), WIDTH, HEIGHT, "mandelbrot - 0 zoom levels.png")
-mandebrot((-1.0, 0), (-1.1, -0.1), WIDTH, HEIGHT, "mandelbrot - 1 zoom level.png")
-mandebrot((-0.7, -0.4), (-0.75, -0.45), WIDTH, HEIGHT, "mandelbrot - 2 zoom levels.png")
-mandebrot((-0.6, -0.5), (-0.7, -0.6), WIDTH, HEIGHT, "mandelbrot - 3 zoom levels.png")
-mandebrot((-0.55, -0.5), (-0.7, -0.65), WIDTH, HEIGHT, "mandelbrot - 4 zoom levels.png")
+mandebrot((-1.6, 0.6), (-1.1, 1.1), WIDTH, HEIGHT, filename(0))
+mandebrot((-1.0, 0), (-1.1, -0.1), WIDTH, HEIGHT, filename(1))
+mandebrot((-0.7, -0.4), (-0.75, -0.45), WIDTH, HEIGHT, filename(2))
+mandebrot((-0.6, -0.5), (-0.7, -0.6), WIDTH, HEIGHT, filename(3))
+mandebrot((-0.55, -0.5), (-0.7, -0.65), WIDTH, HEIGHT, filename(4))
