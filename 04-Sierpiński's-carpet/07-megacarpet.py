@@ -5,7 +5,7 @@ from PIL import ImageDraw
 def make_pattern(draw, x, y, section_size, remaining_levels):
     if remaining_levels <= 0:
         return
-    hole_color = (5, 255, 60)
+    hole_color = (5, 205, 65)
     corner = (x + section_size / 3, y + section_size / 3)
     # -1 necessary due to https://github.com/python-pillow/Pillow/issues/3597
     opposite_corner = (x + section_size * 2/3 - 1, y + section_size * 2/3 - 1)
@@ -18,7 +18,7 @@ def make_pattern(draw, x, y, section_size, remaining_levels):
             make_pattern(draw, min_x_in_section, min_y_in_section, section_size / 3, remaining_levels - 1)
 
 def make_carpet(levels, size):
-    carpet_color = (0, 0, 0)
+    carpet_color = (5, 60, 20)
     carpet = Image.new("RGBA", (size, size), carpet_color)
     draw = ImageDraw.Draw(carpet)
     make_pattern(draw, 0, 0, size, levels)
