@@ -118,7 +118,7 @@ def landscape():
     house_size = (house_width, house_height)
     house(draw, lower_left_house_anchor, house_size)
 
-    for i in range(random.randint(1, 40)):
+    for _ in range(random.randint(1, 40)):
         x = random.randint(0, width)
         y = random.randint(height - grass_height, height)
         dwarf(draw, x, y, figure_height)
