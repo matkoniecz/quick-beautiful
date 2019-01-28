@@ -5,6 +5,10 @@ Code in this repository is a mix of notes, used ideas and materials left as a fe
 
 # Exercises
 
+All images below were creared using code from this repository.
+
+![mandelbrot_-_zoomed.png](mandelbrot_-_zoomed.png)
+
 ## Hello world
 Standard hello world example.
 
