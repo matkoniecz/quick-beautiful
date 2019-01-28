@@ -1,5 +1,5 @@
 Programming exercises - tutorial materials for work with a beginner. I am searching for exercises that can be solved with a simple code and give properly impressive results. Results that may be
-shown to mother/brother/daughter/friend and will impress them.
+shown to friend/mother/brother/daughter and will impress them.
 
 Code in this repository is a mix of notes, used ideas and materials left as a feedback for the future.
 
