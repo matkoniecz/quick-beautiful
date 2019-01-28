@@ -31,4 +31,3 @@ third_carpet = make_carpet(2)
 fourth_carpet = make_carpet(4)
 
 carpet_without_hole.save("Sierpiński's carpet.gif", save_all=True, append_images=[carpet_with_first_hole, third_carpet, fourth_carpet], duration=1200, loop=0)
-
