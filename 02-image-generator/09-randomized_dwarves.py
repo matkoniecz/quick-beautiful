@@ -117,9 +117,6 @@ def landscape():
     house_size = (house_width, house_height)
     house(draw, lower_left_house_anchor, house_size)
 
-
-    x0 = 20
-    y0 = height - int(grass_height / 2)
     for i in range(random.randint(1, 40)):
         x = random.randint(0, width)
         y = random.randint(height - grass_height, height)
