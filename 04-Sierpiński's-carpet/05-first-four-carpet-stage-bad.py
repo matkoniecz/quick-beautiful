@@ -1,6 +1,11 @@
 from PIL import Image
 from PIL import ImageDraw
 
+def save_animated_gif(filename, images, duration):
+    # done using https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html#saving
+    first_image = images[0]
+    other_images = images[1:]
+    first_image.save(filename, save_all=True, append_images=other_images, duration=duration)
 
 def make_pattern(draw, x, y, section_size, remaining_levels):
     if remaining_levels <= 0:
@@ -30,4 +35,5 @@ carpet_with_first_hole = make_carpet(1, size)
 third_carpet = make_carpet(2, size)
 fourth_carpet = make_carpet(3, size)
 
-carpet_without_hole.save("Sierpiński's carpet.gif", save_all=True, append_images=[carpet_with_first_hole, third_carpet, fourth_carpet], duration=1200, loop=0)
+animation = [carpet_without_hole, carpet_with_first_hole, third_carpet, fourth_carpet]
+save_animated_gif.save("Sierpiński's carpet.gif", animation, 1200)

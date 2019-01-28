@@ -1,11 +1,11 @@
 from packaging import version
 from PIL import Image
 
-def save_animated_gif(images, duration):
+def save_animated_gif(filename, images, duration):
     # done using https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html#saving
     first_image = images[0]
     other_images = images[1:]
-    im1.save("out.gif", save_all=True, append_images=other_images, duration=duration)
+    first_image.save(filename, save_all=True, append_images=other_images, duration=duration)
 
 def check_version():
     if version.parse(Image.PILLOW_VERSION) >= version.parse("3.4"):
@@ -22,4 +22,4 @@ height = 300
 im1 = Image.new("RGBA", (width, height), (255, 0, 0))
 im2 = Image.new("RGBA", (width, height), (255, 255, 0))
 im3 = Image.new("RGBA", (width, height), (255, 255, 255))
-save_animated_gif([im1, im2, im3], 900)
+save_animated_gif("out.gif", [im1, im2, im3], 900)
