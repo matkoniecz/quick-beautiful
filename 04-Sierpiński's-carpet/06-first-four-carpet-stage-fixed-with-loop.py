@@ -5,7 +5,7 @@ def save_animated_gif(filename, images, duration):
     # done using https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html#saving
     first_image = images[0]
     other_images = images[1:]
-    first_image.save(filename, save_all=True, append_images=other_images, duration=duration)
+    first_image.save(filename, save_all=True, append_images=other_images, duration=duration, loop=0)
 
 def make_pattern(draw, x, y, section_size, remaining_levels):
     if remaining_levels <= 0:
@@ -35,5 +35,5 @@ carpets = []
 for i in range(3):
     carpets.append(make_carpet(i + 1, size))
 
-save_animated_gif.save("Sierpiński's carpet.gif", carpets, 1200)
+save_animated_gif("Sierpiński's carpet.gif", carpets, 1200)
 

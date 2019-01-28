@@ -5,7 +5,7 @@ def save_animated_gif(filename, images, duration):
     # done using https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html#saving
     first_image = images[0]
     other_images = images[1:]
-    first_image.save(filename, save_all=True, append_images=other_images, duration=duration)
+    first_image.save(filename, save_all=True, append_images=other_images, duration=duration, loop=0)
 
 def check_version():
     if version.parse(Image.PILLOW_VERSION) >= version.parse("3.4"):
