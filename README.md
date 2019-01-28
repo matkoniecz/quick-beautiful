@@ -1,4 +1,5 @@
-Programming exercises - tutorial materials for work with a beginner. I am searching for exercises that can be solved with a simple code and give properly impressive results.
+Programming exercises - tutorial materials for work with a beginner. I am searching for exercises that can be solved with a simple code and give properly impressive results. Results that may be
+shown to mother/brother/daughter/friend and will impress them.
 
 Code in this repository is a mix of notes, used ideas and materials left as a feedback for the future.
 
@@ -45,7 +46,7 @@ There are some similar projects with materials and ideas on topic of teaching pr
 
 Some of them have extensive explanations making the useful on their own for the beginner.
 
-Note that it is not list of tutorials - I am rather looking for lists of interesting project ideas, doable by a beginners.
+Note that it is not list of tutorials - I am rather looking for lists of interesting project ideas. I is necessary that this projects are doable by a beginners (with a help from a tutor or on their own) and give impressive results.
 
 * [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
 
