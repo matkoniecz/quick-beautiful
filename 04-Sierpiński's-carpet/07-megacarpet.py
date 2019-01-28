@@ -24,7 +24,7 @@ def make_carpet(levels, size):
     make_pattern(draw, 0, 0, size, levels)
     return carpet
 
-levels = 6
+levels = 7
 size = 3**levels
 carpets = []
 first_carpet = make_carpet(0, size)
