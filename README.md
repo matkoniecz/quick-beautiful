@@ -57,5 +57,6 @@ Note that it is not list of tutorials - I am rather looking for lists of interes
 It may be in any programming, not only Python (though I think that Python is a great first programing language).
 
 * [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
+* [Making Games with Python & Pygame](http://inventwithpython.com/pygame/)
 
 If something is missing on this list, [let me know](https://github.com/matkoniecz/quick-beautiful/issues/new).
