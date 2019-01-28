@@ -20,6 +20,12 @@ Making image out of simple shapes. For example group of dwarves in from of their
 
 ![dwarves.png](dwarves.png)
 
+## Text statistics
+
+## Sierpiński's carpet
+
+![Sierpiński's carpet.gif](Sierpiński's carpet.gif)
+
 # Bonus
 
 Materials showing interesting cases where programming is necessary:
