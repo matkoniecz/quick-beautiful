@@ -17,19 +17,18 @@ def make_pattern(draw, x, y, section_size, remaining_levels):
             min_y_in_section = y + section_size * y_index / parts
             make_pattern(draw, min_x_in_section, min_y_in_section, section_size / 3, remaining_levels - 1)
 
-def make_carpet(levels):
-    size = 300
+def make_carpet(levels, size):
     carpet_color = (150, 0, 150)
     carpet = Image.new("RGBA", (size, size), carpet_color)
     draw = ImageDraw.Draw(carpet)
     make_pattern(draw, 0, 0, size, levels)
     return carpet
 
-
-first_carpet = make_carpet(0)
+size = 300
+first_carpet = make_carpet(0, size)
 carpets = []
 for i in range(3):
-    carpets.append(make_carpet(i + 1))
+    carpets.append(make_carpet(i + 1, size))
 
 first_carpet.save("Sierpiński's carpet.gif", save_all=True, append_images=carpets, duration=1200, loop=0)
 
