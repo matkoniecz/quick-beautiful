@@ -34,19 +34,6 @@ def dwarf(draw, x0, y0, figure_height):
     beard(draw, x0, x1, head_x, head_y, r)
 
 
-def dwarf(draw, x0, y0, figure_height):
-    figure_width = 30
-    x1 = x0 + figure_width
-    y1 = y0 - figure_height
-    draw.rectangle(((x0, y0), (x1, y1)), fill=(240, 30, 20))
-    head_x = (x0 + x1)/2
-    head_y = y1
-    r = figure_width / 1.5
-    draw.ellipse(((head_x-r, head_y-r), (head_x+r, head_y+r)), fill=(255, 182, 193))
-    hat(draw, x0, x1, head_x, head_y, r)
-    beard(draw, x0, x1, head_x, head_y, r)
-
-
 def grass(draw, width, height, grass_height):
     x0 = 0
     y0 = height - 1
