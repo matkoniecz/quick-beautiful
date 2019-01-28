@@ -98,31 +98,34 @@ def house(draw, lower_left_house_anchor, house_size):
     house_roof(draw, lower_left_roof_anchor, roof_size)
 
 
-width = 2000
-height = 400
-im = Image.new("RGB", (width, height), (110, 200, 110))
+def landscape():
+    width = 2000
+    height = 400
+    im = Image.new("RGB", (width, height), (110, 200, 110))
 
-# https://pillow.readthedocs.io/en/latest/reference/ImageDraw.html
-draw = ImageDraw.Draw(im)
-grass_height = int(height / 3)
-figure_height = 80
-grass(draw, width, height, grass_height)
+    # https://pillow.readthedocs.io/en/latest/reference/ImageDraw.html
+    draw = ImageDraw.Draw(im)
+    grass_height = int(height / 3)
+    figure_height = 80
+    grass(draw, width, height, grass_height)
 
-house_width = min(300, width / 3)
-left_house_wall_x = width - house_width * 2
-house_base_y = height - grass_height / 2
-lower_left_house_anchor = (left_house_wall_x, house_base_y)
-house_height = min(figure_height * 3, house_base_y * 0.8)
-house_size = (house_width, house_height)
-house(draw, lower_left_house_anchor, house_size)
+    house_width = min(300, width / 3)
+    left_house_wall_x = width - house_width * 2
+    house_base_y = height - grass_height / 2
+    lower_left_house_anchor = (left_house_wall_x, house_base_y)
+    house_height = min(figure_height * 3, house_base_y * 0.8)
+    house_size = (house_width, house_height)
+    house(draw, lower_left_house_anchor, house_size)
 
 
-x0 = 20
-y0 = height - int(grass_height / 2)
-for i in range(random.randint(1, 40)):
-    x = random.randint(0, width)
-    y = random.randint(height - grass_height, height)
-    dwarf(draw, x, y, figure_height)
+    x0 = 20
+    y0 = height - int(grass_height / 2)
+    for i in range(random.randint(1, 40)):
+        x = random.randint(0, width)
+        y = random.randint(height - grass_height, height)
+        dwarf(draw, x, y, figure_height)
 
-im.save("dwarves.png")
-im.show()
+    im.save("dwarves.png")
+    im.show()
+
+landscape()

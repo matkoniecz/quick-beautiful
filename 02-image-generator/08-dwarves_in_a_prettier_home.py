@@ -83,32 +83,34 @@ def house(draw, lower_left_house_anchor, house_size):
     roof_size = (house_width  + 2 * roof_overhang_size, house_height - wall_height)
     house_roof(draw, lower_left_roof_anchor, roof_size)
 
+def landscape():
+    width = 2000
+    height = 400
+    im = Image.new("RGB", (width, height), (110, 200, 110))
 
-width = 2000
-height = 400
-im = Image.new("RGB", (width, height), (110, 200, 110))
+    # https://pillow.readthedocs.io/en/latest/reference/ImageDraw.html
+    draw = ImageDraw.Draw(im)
+    grass_height = int(height / 3)
+    figure_height = 80
+    grass(draw, width, height, grass_height)
 
-# https://pillow.readthedocs.io/en/latest/reference/ImageDraw.html
-draw = ImageDraw.Draw(im)
-grass_height = int(height / 3)
-figure_height = 80
-grass(draw, width, height, grass_height)
-
-house_width = min(300, width / 3)
-left_house_wall_x = width - house_width * 2
-house_base_y = height - grass_height / 2
-lower_left_house_anchor = (left_house_wall_x, house_base_y)
-house_height = min(figure_height * 3, house_base_y * 0.8)
-house_size = (house_width, house_height)
-house(draw, lower_left_house_anchor, house_size)
+    house_width = min(300, width / 3)
+    left_house_wall_x = width - house_width * 2
+    house_base_y = height - grass_height / 2
+    lower_left_house_anchor = (left_house_wall_x, house_base_y)
+    house_height = min(figure_height * 3, house_base_y * 0.8)
+    house_size = (house_width, house_height)
+    house(draw, lower_left_house_anchor, house_size)
 
 
-x0 = 20
-y0 = height - int(grass_height / 2)
-dwarf(draw, x0, y0, figure_height)
-dwarf(draw, x0 + 80, y0, figure_height)
-dwarf(draw, x0 + 190, y0, figure_height)
-dwarf(draw, x0 + 260, y0, figure_height)
+    x0 = 20
+    y0 = height - int(grass_height / 2)
+    dwarf(draw, x0, y0, figure_height)
+    dwarf(draw, x0 + 80, y0, figure_height)
+    dwarf(draw, x0 + 190, y0, figure_height)
+    dwarf(draw, x0 + 260, y0, figure_height)
 
-im.save("dwarves.png")
-im.show()
+    im.save("dwarves.png")
+    im.show()
+
+landscape()
