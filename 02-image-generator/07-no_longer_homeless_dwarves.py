@@ -46,9 +46,9 @@ grass(draw, width, height, grass_height)
 
 house_width = min(300, width / 3)
 left_house_wall_x = width - house_width * 2
-house_base_y =height - grass_height / 2
+house_base_y = height - grass_height / 2
 lower_left_house_anchor = (left_house_wall_x, house_base_y)
-house_height =  min(figure_height * 3, house_base_y * 0.8)
+house_height = min(figure_height * 3, house_base_y * 0.8)
 house_size = (house_width, house_height)
 house(draw, lower_left_house_anchor, house_size)
 

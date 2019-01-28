@@ -30,6 +30,7 @@ def mandebrot(X, Y, WIDTH, HEIGHT, filename):
     im.save(filename)
     im.show()
 
+
 def filename(zoom_level):
     return "mandelbrot - zoom level " + str(zoom_level) + ".png"
 
