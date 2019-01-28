@@ -2,21 +2,24 @@ import random
 from PIL import Image, ImageDraw
 
 
-def hat(draw, x0, x1, head_x, head_y, r):
+def hat(draw, x0, x1, head_center, r):
+    head_x, head_y = head_center
     left_bottom = (x0 - 15, head_y)
     right_bottom = (x1 + 15, head_y)
     top = (head_x, head_y - 30 - random.randint(0, 4*r))
     draw.polygon((left_bottom, right_bottom, top), fill=(240, 30, 20))
 
 
-def beard(draw, x0, x1, head_x, head_y, r):
+def beard(draw, x0, x1, head_center, r):
+    head_x, head_y = head_center
     left_top = (x0, head_y + 10)
     right_top = (x1, head_y + 10)
     bottom = (head_x, head_y + 30 + random.randint(0, 4*r))
     draw.polygon((left_top, right_top, bottom), fill=(240, 240, 240))
 
 
-def face(draw, head_x, head_y, r):
+def face(draw, head_center, r):
+    head_x, head_y = head_center
     circle_bounding_box = ((head_x-r, head_y-r), (head_x+r, head_y+r))
     draw.ellipse(circle_bounding_box, fill=(255, 182, 193))
 
@@ -29,9 +32,10 @@ def dwarf(draw, x0, y0, figure_height):
     head_x = (x0 + x1)/2
     head_y = y1
     r = figure_width / 1.5
-    face(draw, head_x, head_y, r)
-    hat(draw, x0, x1, head_x, head_y, r)
-    beard(draw, x0, x1, head_x, head_y, r)
+    head_center = head_x, head_y
+    face(draw, head_center, r)
+    hat(draw, x0, x1, head_center, r)
+    beard(draw, x0, x1, head_center, r)
 
 
 def grass(draw, width, height, grass_height):
