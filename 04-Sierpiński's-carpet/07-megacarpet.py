@@ -31,5 +31,5 @@ first_carpet = make_carpet(0, size)
 for i in range(levels - 1):
     carpets.append(make_carpet(i + 1, size))
 
-first_carpet.save("Sierpiński's carpet.gif", save_all=True, append_images=carpets, duration=1200, loop=1)
+first_carpet.save("Sierpiński's carpet.gif", save_all=True, append_images=carpets, duration=1200, loop=0)
 
