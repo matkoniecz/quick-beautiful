@@ -44,7 +44,8 @@ def grass(draw, width, height, grass_height):
 def house_wall(draw, lower_left_house_anchor, wall_size):
     left_house_wall_x, left_house_wall_y = lower_left_house_anchor
     wall_width, wall_height = wall_size
-    coordinates = ((left_house_wall_x, left_house_wall_y), (left_house_wall_x + wall_width, left_house_wall_y - wall_height))
+    right_upper_corner = (left_house_wall_x + wall_width, left_house_wall_y - wall_height)
+    coordinates = (lower_left_house_anchor, right_upper_corner)
     draw.rectangle(coordinates, fill=(230, 150, 100))
 
 
