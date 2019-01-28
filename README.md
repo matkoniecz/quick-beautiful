@@ -48,6 +48,8 @@ Some of them have extensive explanations making the useful on their own for the 
 
 Note that it is not list of tutorials - I am rather looking for lists of interesting project ideas. I is necessary that this projects are doable by a beginners (with a help from a tutor or on their own) and give impressive results.
 
+It may be in any programming, not only Python (though I think that Python is a great first programing language).
+
 * [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
 
 If something is missing on this list, [let me know](https://github.com/matkoniecz/quick-beautiful/issues/new).
