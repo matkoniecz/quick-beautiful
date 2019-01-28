@@ -48,9 +48,11 @@ It includes workaround for bug [#2018](https://github.com/PyCQA/pylint/issues/20
 
 Rule `R0801` is also disabled as it is not working properly due to specific repository format (many versions of the same code).
 
-### Version without docstring complaints
+### Version without minor complaints
 
-`pylint **/*.py --include-naming-hint=y --variable-rgx=^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$ --argument-rgx=^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$ --disable=C0103,R0801,C0111`
+`pylint **/*.py --include-naming-hint=y --variable-rgx=^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$ --argument-rgx=^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$ --disable=C0103,R0801,C0111,W0621`
+
+Rule `C0111` requesting docstrings is disabled, the same with `W0621` complaining about defining some varaibles not within functions.
 
 ## Run all Python scripts in one folder
 
