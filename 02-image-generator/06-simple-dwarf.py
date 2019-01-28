@@ -19,17 +19,19 @@ def beard(draw, x0, x1, head_x, head_y, r):
     bottom = (head_x, head_y + 2*r)
     draw.polygon((left_top, right_top, bottom), fill=(240, 240, 240))
 
+def face(draw, head_x, head_y, r):
+    circle_bounding_box = ((head_x-r, head_y-r), (head_x+r, head_y+r))
+    draw.ellipse(circle_bounding_box, fill=(255, 182, 193))
 
-def dwarf(draw, x0, y0):
-    figure_height = 60
-    figure_width = 30
+def dwarf(draw, x0, y0, figure_height):
+    figure_width = figure_height/2.5
     x1 = x0 + figure_width
     y1 = y0 - figure_height
     draw.rectangle(((x0, y0), (x1, y1)), fill=(240, 30, 20))
     head_x = (x0 + x1)/2
     head_y = y1
     r = figure_width / 1.5
-    draw.ellipse(((head_x-r, head_y-r), (head_x+r, head_y+r)), fill=(255, 182, 193))
+    face(draw, head_x, head_y, r)
     hat(draw, x0, x1, head_x, head_y, r)
     beard(draw, x0, x1, head_x, head_y, r)
 
@@ -50,13 +52,14 @@ im = Image.new("RGB", (width, height), (110, 200, 110))
 draw = ImageDraw.Draw(im)
 
 grass_height = int(height / 3)
+figure_height = 80
 
 x0 = 20
 y0 = height - int(grass_height / 2)
-dwarf(draw, x0, y0)
-dwarf(draw, x0 + 80, y0)
-dwarf(draw, x0 + 190, y0)
-dwarf(draw, x0 + 260, y0)
+dwarf(draw, x0, y0, figure_height)
+dwarf(draw, x0 + 80, y0, figure_height)
+dwarf(draw, x0 + 190, y0, figure_height)
+dwarf(draw, x0 + 260, y0, figure_height)
 
 im.save("dwarves.png")
 im.show()
