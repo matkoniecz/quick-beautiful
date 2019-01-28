@@ -1,5 +1,5 @@
-from PIL import Image, ImageDraw
 import random
+from PIL import Image, ImageDraw
 
 
 def hat(draw, x0, x1, head_x, head_y, r):
