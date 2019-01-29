@@ -28,6 +28,8 @@ Making image out of simple shapes. For example group of dwarves in from of their
 
 ## Sierpiński's carpet
 
+More complicated case of recursion.
+
 ![Sierpiński's_carpet.gif](Sierpiński's_carpet.gif)
 
 # Bonus
