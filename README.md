@@ -58,7 +58,7 @@ Rule `R0801` is also disabled as it is not working properly due to specific repo
 
 `pylint **/*.py --include-naming-hint=y --variable-rgx=^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$ --argument-rgx=^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$ --disable=C0103,R0801,C0111,W0621`
 
-Rule `C0111` requesting docstrings is disabled, the same with `W0621` complaining about defining some varaibles not within functions.
+Rule `C0111` requesting docstrings is disabled, the same with `W0621` complaining about defining some variables not within functions.
 
 ## Run all Python scripts in one folder
 
