@@ -7,7 +7,7 @@ Tutorial materials for work with a beginner, mostly code in stages from scratch 
 I am searching for exercises that can be solved with a simple code and give properly impressive results. Results that may be
 shown to friend/mother/brother/daughter and will impress them.
 
-Code in this repository is a mix of material alreasy used and tested, ideas for a future, work in progress and notes.
+Code in this repository is a mix of material already used and tested, ideas for a future, work in progress and notes.
 
 ![mandelbrot_-_zoomed.png](mandelbrot_-_zoomed.png)
 
