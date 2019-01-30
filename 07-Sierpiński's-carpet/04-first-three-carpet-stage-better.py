@@ -19,9 +19,11 @@ def make_pattern(draw, x, y, section_size, remaining_levels):
     parts = 3
     for x_index in range(parts):
         for y_index in range(parts):
-            min_x_in_section = x + section_size * x_index / parts
-            min_y_in_section = y + section_size * y_index / parts
-            make_pattern(draw, min_x_in_section, min_y_in_section, section_size / 3, remaining_levels - 1)
+            x_anchor = x + section_size * x_index / parts
+            y_anchor = y + section_size * y_index / parts
+            new_size = section_size / 3
+            new_levels = remaining_levels - 1
+            make_pattern(draw, x_anchor, y_anchor, new_size, new_levels)
 
 def make_carpet(levels, size):
     carpet_color = (150, 0, 150)
