@@ -8,7 +8,7 @@ def save_animated_gif(filename, images, duration):
     other_images = images[1:]
     first_image.save(filename, save_all=True, append_images=other_images, duration=duration, loop=0)
 
-def make_pattern(draw, x, y, section_size, remaining_levels):
+def make_pattern(draw, x, y, section_size, remaining_levels, hole_color):
     if remaining_levels <= 0:
         return
     hole_color = (255, 255, 255)
@@ -23,14 +23,16 @@ def make_pattern(draw, x, y, section_size, remaining_levels):
             y_anchor = y + section_size * y_index / parts
             new_size = section_size / 3
             new_levels = remaining_levels - 1
-            make_pattern(draw, x_anchor, y_anchor, new_size, new_levels)
+            make_pattern(draw, x_anchor, y_anchor, new_size, new_levels, hole_color)
 
 
 def make_carpet(levels, size):
-    carpet_color = (150, 0, 150)
+    PURPLE = (150, 0, 150)
+    WHITE = (255, 255, 255)
+    carpet_color = PURPLE
     carpet = Image.new("RGBA", (size, size), carpet_color)
     draw = ImageDraw.Draw(carpet)
-    make_pattern(draw, 0, 0, size, levels)
+    make_pattern(draw, 0, 0, size, levels, hole_color=WHITE)
     return carpet
 
 

@@ -8,10 +8,9 @@ def save_animated_gif(filename, images, duration):
     other_images = images[1:]
     first_image.save(filename, save_all=True, append_images=other_images, duration=duration, loop=0)
 
-def make_pattern(draw, x, y, section_size, remaining_levels):
+def make_pattern(draw, x, y, section_size, remaining_levels, hole_color):
     if remaining_levels <= 0:
         return
-    hole_color = (5, 205, 65)
     corner = (x + section_size / 3, y + section_size / 3)
     # -1 necessary due to https://github.com/python-pillow/Pillow/issues/3597
     opposite_corner = (x + section_size * 2/3 - 1, y + section_size * 2/3 - 1)
@@ -23,14 +22,16 @@ def make_pattern(draw, x, y, section_size, remaining_levels):
             y_anchor = y + section_size * y_index / parts
             new_size = section_size / 3
             new_levels = remaining_levels - 1
-            make_pattern(draw, x_anchor, y_anchor, new_size, new_levels)
+            make_pattern(draw, x_anchor, y_anchor, new_size, new_levels, hole_color)
 
 
 def make_carpet(levels, size):
-    carpet_color = (5, 60, 20)
+    DARK_GREEN = (5, 60, 20)
+    LIGHT_GREEN = (5, 205, 65)
+    carpet_color = DARK_GREEN
     carpet = Image.new("RGBA", (size, size), carpet_color)
     draw = ImageDraw.Draw(carpet)
-    make_pattern(draw, 0, 0, size, levels)
+    make_pattern(draw, 0, 0, size, levels, hole_color=LIGHT_GREEN)
     return carpet
 
 

@@ -21,7 +21,10 @@ def check_version():
 check_version()
 width = 300
 height = 300
-im1 = Image.new("RGBA", (width, height), (255, 0, 0))
-im2 = Image.new("RGBA", (width, height), (255, 255, 0))
-im3 = Image.new("RGBA", (width, height), (255, 255, 255))
+RED = (255, 0, 0)
+YELLOW = (255, 255, 0)
+WHITE = (255, 255, 255)
+im1 = Image.new("RGBA", (width, height), RED)
+im2 = Image.new("RGBA", (width, height), YELLOW)
+im3 = Image.new("RGBA", (width, height), WHITE)
 save_animated_gif("out.gif", [im1, im2, im3], 900)

@@ -9,8 +9,10 @@ def save_animated_gif(filename, images, duration):
     first_image.save(filename, save_all=True, append_images=other_images, duration=duration, loop=0)
 
 size = 300
-carpet_color = (150, 0, 150)
-hole_color = (255, 255, 255)
+PURPLE = (150, 0, 150)
+WHITE = (255, 255, 255)
+carpet_color = PURPLE
+hole_color = WHITE
 carpet_without_hole = Image.new("RGBA", (size, size), carpet_color)
 carpet_with_first_hole = Image.new("RGBA", (size, size), carpet_color)
 draw = ImageDraw.Draw(carpet_with_first_hole)
