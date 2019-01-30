@@ -1,13 +1,17 @@
-Programming exercises - tutorial materials for work with a beginner. I am searching for exercises that can be solved with a simple code and give properly impressive results. Results that may be
+# Quick & Beautiful - colection of orogramming exercises for beginners
+
+Tutorial materials for work with a beginner, mostly code in stages from scratch to a completed work.
+
+I am searching for exercises that can be solved with a simple code and give properly impressive results. Results that may be
 shown to friend/mother/brother/daughter and will impress them.
 
-Code in this repository is a mix of notes, used ideas and materials left as a feedback for the future.
+Code in this repository is a mix of material alreasy used and tested, ideas for a future, work in progress and notes.
+
+![mandelbrot_-_zoomed.png](mandelbrot_-_zoomed.png)
 
 # Exercises
 
 All images below were created using code from this repository.
-
-![mandelbrot_-_zoomed.png](mandelbrot_-_zoomed.png)
 
 ## Hello world
 Standard hello world example.
