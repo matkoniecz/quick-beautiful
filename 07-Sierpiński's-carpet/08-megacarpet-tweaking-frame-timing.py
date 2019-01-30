@@ -37,7 +37,7 @@ def make_carpet(levels, size):
 levels = 7
 size = 3**levels
 carpets = []
-first_carpet = make_carpet(0, size)
+carpets.append(make_carpet(0, size))
 durations = [400] # first stage visible for a short time
 for i in range(levels - 1):
     carpets.append(make_carpet(i + 1, size))
