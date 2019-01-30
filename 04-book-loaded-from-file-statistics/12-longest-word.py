@@ -16,7 +16,7 @@ longest_word_length = 0
 for word in text_into_word_array(text):
     print(word)
     print(len(word))
-    if(longest_word_length < len(word)):
+    if longest_word_length < len(word):
         print("new longest word")
         longest_word = word
         longest_word_length = len(word)
