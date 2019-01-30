@@ -25,6 +25,7 @@ def make_pattern(draw, x, y, section_size, remaining_levels):
             new_levels = remaining_levels - 1
             make_pattern(draw, x_anchor, y_anchor, new_size, new_levels)
 
+
 def make_carpet(levels, size):
     carpet_color = (150, 0, 150)
     carpet = Image.new("RGBA", (size, size), carpet_color)

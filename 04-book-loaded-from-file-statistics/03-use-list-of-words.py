@@ -5,7 +5,7 @@ for word in text.split():
     print(word)
 print()
 
-#make short step for array explanation/reminder
+# make short step for array explanation/reminder
 
 print("words and their lengths:")
 for word in text.split():
