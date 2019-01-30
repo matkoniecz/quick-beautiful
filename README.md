@@ -1,4 +1,6 @@
-# Quick & Beautiful - colection of programming exercises for beginners
+# Quick & Beautiful
+
+Programming exercises for beginners that I collected and prepared.
 
 Tutorial materials for work with a beginner, mostly code in stages from scratch to a completed work.
 
