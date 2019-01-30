@@ -15,10 +15,10 @@ carpet_without_hole = Image.new("RGBA", (size, size), carpet_color)
 carpet_with_first_hole = Image.new("RGBA", (size, size), carpet_color)
 draw = ImageDraw.Draw(carpet_with_first_hole)
 
+corner = (size / 3, size / 3)
 # -1 necessary due to https://github.com/python-pillow/Pillow/issues/3597
-rectangle_size = (size * 2/3 - 1, size * 2/3 - 1)
-
-draw.rectangle(((size / 3, size / 3), rectangle_size), fill=hole_color)
+opposite_corner = (size * 2/3 - 1, size * 2/3 - 1)
+draw.rectangle((corner, opposite_corner), fill=hole_color)
 
 animation = [carpet_without_hole, carpet_with_first_hole]
 save_animated_gif("Sierpiński's carpet.gif", animation, 1200)
