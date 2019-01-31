@@ -35,13 +35,13 @@ def make_carpet(levels, size):
     return carpet
 
 
-levels = 7
-size = 3**levels
+FRACTAL_DEPTH = 7
+size = 3**FRACTAL_DEPTH
 carpets = []
 carpets.append(make_carpet(0, size))
 standard_frame_time_in_ms = 1200
 durations = [standard_frame_time_in_ms / 2] # first stage visible for a short time
-for i in range(levels - 1):
+for i in range(FRACTAL_DEPTH - 1):
     carpets.append(make_carpet(i + 1, size))
     durations.append(standard_frame_time_in_ms)
 durations[-1] *= 4 # final stage of animation visible for a long time
