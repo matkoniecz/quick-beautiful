@@ -39,11 +39,12 @@ FRACTAL_DEPTH = 7
 size = 3**FRACTAL_DEPTH
 carpets = []
 carpets.append(make_carpet(0, size))
-standard_frame_time_in_ms = 1200
-durations = [standard_frame_time_in_ms / 2] # first stage visible for a short time
 for i in range(FRACTAL_DEPTH - 1):
     carpets.append(make_carpet(i + 1, size))
-    durations.append(standard_frame_time_in_ms)
+
+standard_frame_time_in_ms = 1200
+durations = [standard_frame_time_in_ms] * FRACTAL_DEPTH
+durations[0] /= 2 # first stage visible for a short time
 durations[-1] *= 4 # final stage of animation visible for a long time
 
 save_animated_gif("Sierpiński's carpet.gif", carpets, durations)
