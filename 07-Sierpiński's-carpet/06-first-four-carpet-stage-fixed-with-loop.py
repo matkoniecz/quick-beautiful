@@ -37,9 +37,8 @@ def make_carpet(levels, size):
 
 size = 300
 FRACTAL_DEPTH = 3
-first_carpet = make_carpet(0, size)
 carpets = []
-for i in range(FRACTAL_DEPTH):
+for i in range(-1, FRACTAL_DEPTH - 1):
     carpets.append(make_carpet(i + 1, size))
 
 save_animated_gif("Sierpiński's carpet.gif", carpets, 1200)
