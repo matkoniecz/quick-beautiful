@@ -4,3 +4,6 @@ for element in list_of_numbers:
     if largest < element:
         largest = element
 print(largest)
+
+# task: how to show smallest one?
+# task: how to show number closest to 8?
