@@ -38,6 +38,10 @@ More complicated case of recursion.
 
 ![Sierpiński's_carpet.gif](Sierpiński's_carpet.gif)
 
+# Beyond simple programs
+
+Note that simple programs like listed here are a great first step. But to really learn programing one needs also to be able to dive in large programs made by other people, to properly document changes. Basic skills like Git were not even mentioned here and are absolute necessity even for a hobbyist.
+
 # Bonus
 
 Materials showing interesting cases where programming is necessary:
