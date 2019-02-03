@@ -57,8 +57,11 @@ def house_wall(draw, lower_left_anchor, wall_size):
 def house_door(draw, lower_left_house_anchor, door_size):
     left_house_wall_x, house_base_y = lower_left_house_anchor
     door_width, door_height = door_size
-    lower_left = (left_house_wall_x + door_width / 2, house_base_y)
-    upper_right = (left_house_wall_x + door_width  * 1.5, house_base_y - door_height)
+    gap_between_door_and_wall = door_width / 2
+    left_side_door_x = left_house_wall_x + gap_between_door_and_wall
+    right_side_door_x = left_side_door_x + door_width
+    lower_left = (left_side_door_x, house_base_y)
+    upper_right = (right_side_door_x, house_base_y - door_height)
     draw.rectangle((lower_left, upper_right), fill=(200, 120, 90))
 
 
