@@ -5,7 +5,7 @@ words = [
     'Python',
     'Siebentausendzweihundertvierundfünfzig',
     'supercalifragilisticexpialidocious',
-    ]
+]
 
 longest_word = words[0]
 length = len(words[0])

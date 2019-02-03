@@ -43,7 +43,7 @@ for i in range(-1, FRACTAL_DEPTH - 1):
 
 standard_frame_time_in_ms = 1200
 durations = [standard_frame_time_in_ms] * FRACTAL_DEPTH
-durations[0] /= 2 # first stage visible for a short time
-durations[-1] *= 4 # final stage of animation visible for a long time
+durations[0] /= 2  # first stage visible for a short time
+durations[-1] *= 4  # final stage of animation visible for a long time
 
 save_animated_gif("Sierpiński's carpet.gif", carpets, durations)

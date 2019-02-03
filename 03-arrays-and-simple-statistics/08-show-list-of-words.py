@@ -5,7 +5,7 @@ words = [
     'Python',
     'Siebentausendzweihundertvierundfünfzig',
     'supercalifragilisticexpialidocious',
-    ]
+]
 
 print("entire list:")
 print(words)

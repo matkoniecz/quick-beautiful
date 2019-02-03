@@ -5,7 +5,7 @@ words = [
     'Python',
     'Siebentausendzweihundertvierundfünfzig',
     'supercalifragilisticexpialidocious',
-    ]
+]
 
 for word in words:
     print(len(word))
