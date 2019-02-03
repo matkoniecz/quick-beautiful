@@ -29,13 +29,13 @@ def face(draw, head_center, r):
 
 
 def dwarf(draw, x0, y0, figure_height):
-    figure_width = figure_height/2.5
+    figure_width = figure_height//2.5
     x1 = x0 + figure_width
     y1 = y0 - figure_height
     draw.rectangle(((x0, y0), (x1, y1)), fill=(240, 30, 20))
-    head_x = (x0 + x1)/2
+    head_x = (x0 + x1)//2
     head_y = y1
-    r = figure_width / 1.5
+    r = figure_width // 1.5
     head_center = head_x, head_y
     face(draw, head_center, r)
     hat(draw, x0, x1, head_center, r)
@@ -57,11 +57,11 @@ im = Image.new("RGB", (width, height), (110, 200, 110))
 # https://pillow.readthedocs.io/en/latest/reference/ImageDraw.html
 draw = ImageDraw.Draw(im)
 
-grass_height = int(height / 3)
+grass_height = height // 3
 figure_height = 80
 
 x0 = 20
-y0 = height - int(grass_height / 2)
+y0 = height - grass_height // 2
 dwarf(draw, x0, y0, figure_height)
 dwarf(draw, x0 + 80, y0, figure_height)
 dwarf(draw, x0 + 190, y0, figure_height)

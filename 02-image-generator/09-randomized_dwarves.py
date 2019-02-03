@@ -25,13 +25,13 @@ def face(draw, head_center, r):
 
 
 def dwarf(draw, x0, y0, figure_height):
-    figure_width = figure_height / 2.5
+    figure_width = figure_height // 2.5
     x1 = x0 + figure_width
     y1 = y0 - figure_height
     draw.rectangle(((x0, y0), (x1, y1)), fill=(240, 30, 20))
-    head_x = (x0 + x1)/2
+    head_x = (x0 + x1)//2
     head_y = y1
-    r = figure_width / 1.5
+    r = figure_width // 1.5
     head_center = head_x, head_y
     face(draw, head_center, r)
     hat(draw, x0, x1, head_center, r)
@@ -57,7 +57,7 @@ def house_wall(draw, lower_left_anchor, wall_size):
 def house_door(draw, lower_left_house_anchor, door_size):
     left_house_wall_x, house_base_y = lower_left_house_anchor
     door_width, door_height = door_size
-    gap_between_door_and_wall = door_width / 2
+    gap_between_door_and_wall = door_width // 2
     left_side_door_x = left_house_wall_x + gap_between_door_and_wall
     right_side_door_x = left_side_door_x + door_width
     lower_left = (left_side_door_x, house_base_y)
@@ -70,24 +70,24 @@ def house_roof(draw, lower_left_roof_anchor, roof_size):
     roof_width, roof_height = roof_size
     lower_left = (left_roof_anchor_x, left_roof_anchor_y)
     lower_right = (left_roof_anchor_x + roof_width, left_roof_anchor_y)
-    roof_top = (left_roof_anchor_x + roof_width/2, left_roof_anchor_y - roof_height)
+    roof_top = (left_roof_anchor_x + roof_width//2, left_roof_anchor_y - roof_height)
     draw.polygon((lower_left, lower_right, roof_top), fill=(240, 60, 60))
 
 
 def house(draw, lower_left_house_anchor, house_size):
     house_width, house_height = house_size
-    wall_height = house_height * 2/3
+    wall_height = house_height * 2 // 3
     left_house_wall_x, house_base_y = lower_left_house_anchor
 
     wall_size = (house_width, wall_height)
     house_wall(draw, lower_left_house_anchor, wall_size)
 
-    door_height = wall_height * 0.8
-    door_width = door_height * 0.4
+    door_height = int(wall_height * 0.8)
+    door_width = int(door_height * 0.4)
     door_size = (door_width, door_height)
     house_door(draw, lower_left_house_anchor, door_size)
 
-    roof_overhang_size = house_width * 0.15
+    roof_overhang_size = house_width // 7
     lower_left_roof_anchor = (left_house_wall_x - roof_overhang_size, house_base_y - wall_height)
     roof_size = (house_width  + 2 * roof_overhang_size, house_height - wall_height)
     house_roof(draw, lower_left_roof_anchor, roof_size)
@@ -100,15 +100,15 @@ def landscape():
 
     # https://pillow.readthedocs.io/en/latest/reference/ImageDraw.html
     draw = ImageDraw.Draw(im)
-    grass_height = int(height / 3)
+    grass_height = int(height // 3)
     figure_height = 80
     grass(draw, width, height, grass_height)
 
-    house_width = min(300, width / 3)
+    house_width = min(300, width // 3)
     left_house_wall_x = width - house_width * 2
-    house_base_y = height - grass_height / 2
+    house_base_y = height - grass_height // 2
     lower_left_house_anchor = (left_house_wall_x, house_base_y)
-    house_height = min(figure_height * 3, house_base_y * 0.8)
+    house_height = min(figure_height * 3, int(house_base_y * 0.8))
     house_size = (house_width, house_height)
     house(draw, lower_left_house_anchor, house_size)
 

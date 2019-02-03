@@ -24,13 +24,13 @@ def face(draw, head_center, r):
 
 
 def dwarf(draw, x0, y0, figure_height):
-    figure_width = figure_height / 2.5
+    figure_width = figure_height // 2.5
     x1 = x0 + figure_width
     y1 = y0 - figure_height
     draw.rectangle(((x0, y0), (x1, y1)), fill=(240, 30, 20))
-    head_x = (x0 + x1)/2
+    head_x = (x0 + x1)//2
     head_y = y1
-    r = figure_width / 1.5
+    r = figure_width // 1.5
     head_center = head_x, head_y
     face(draw, head_center, r)
     hat(draw, x0, x1, head_center, r)
@@ -60,20 +60,20 @@ def landscape():
 
     # https://pillow.readthedocs.io/en/latest/reference/ImageDraw.html
     draw = ImageDraw.Draw(im)
-    grass_height = int(height / 3)
+    grass_height = height // 3
     figure_height = 80
     grass(draw, width, height, grass_height)
 
-    house_width = min(300, width / 3)
+    house_width = min(300, width // 3)
     left_house_wall_x = width - house_width * 2
-    house_base_y = height - grass_height / 2
+    house_base_y = height - grass_height // 2
     lower_left_house_anchor = (left_house_wall_x, house_base_y)
-    house_height = min(figure_height * 3, house_base_y * 0.8)
+    house_height = min(figure_height * 3, int(house_base_y * 0.8))
     house_size = (house_width, house_height)
     house(draw, lower_left_house_anchor, house_size)
 
     x0 = 20
-    y0 = height - int(grass_height / 2)
+    y0 = height - grass_height // 2
     dwarf(draw, x0, y0, figure_height)
     dwarf(draw, x0 + 80, y0, figure_height)
     dwarf(draw, x0 + 190, y0, figure_height)
