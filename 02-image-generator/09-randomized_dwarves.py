@@ -46,11 +46,11 @@ def grass(draw, width, height, grass_height):
     draw.rectangle(((x0, y0), (x1, y1)), fill=(20, 230, 20))
 
 
-def house_wall(draw, lower_left_house_anchor, wall_size):
-    left_house_wall_x, left_house_wall_y = lower_left_house_anchor
+def house_wall(draw, lower_left_anchor, wall_size):
+    left_x, left_y = lower_left_anchor
     wall_width, wall_height = wall_size
-    right_upper_corner = (left_house_wall_x + wall_width, left_house_wall_y - wall_height)
-    coordinates = (lower_left_house_anchor, right_upper_corner)
+    right_upper_corner = (left_x + wall_width, left_y - wall_height)
+    coordinates = (lower_left_anchor, right_upper_corner)
     draw.rectangle(coordinates, fill=(230, 150, 100))
 
 
