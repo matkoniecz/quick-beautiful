@@ -10,6 +10,7 @@ BACKGROUND = (110, 200, 110)
 HOUSE_WALL = (230, 150, 100)
 HOUSE_DOOR = (200, 120, 90)
 HOUSE_ROOF = (240, 60, 60)
+AVERAGE_DWARF_COUNT = 20
 
 def hat(draw, x0, x1, head_center, r):
     head_x, head_y = head_center
@@ -121,7 +122,7 @@ def landscape():
     house_size = (house_width, house_height)
     house(draw, lower_left_house_anchor, house_size)
 
-    for _ in range(random.randint(1, 40)):
+    for _ in range(random.randint(0, AVERAGE_DWARF_COUNT * 2)):
         x = random.randint(0, width)
         y = random.randint(height - grass_height, height)
         dwarf(draw, x, y, figure_height)
