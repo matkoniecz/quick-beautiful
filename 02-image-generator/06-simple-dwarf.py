@@ -45,22 +45,24 @@ def dwarf(draw, x0, y0, figure_height):
     hat(draw, x0, x1, head_center, r)
     beard(draw, x0, x1, head_center, r)
 
+def landscape():
+    width = 2000
+    height = 400
+    im = Image.new("RGB", (width, height), BACKGROUND)
 
-width = 2000
-height = 400
-im = Image.new("RGB", (width, height), BACKGROUND)
+    # https://pillow.readthedocs.io/en/latest/reference/ImageDraw.html
+    draw = ImageDraw.Draw(im)
 
-# https://pillow.readthedocs.io/en/latest/reference/ImageDraw.html
-draw = ImageDraw.Draw(im)
+    figure_height = 80
 
-figure_height = 80
+    x0 = 20
+    y0 = height - 70
+    dwarf(draw, x0, y0, figure_height)
+    dwarf(draw, x0 + 80, y0, figure_height)
+    dwarf(draw, x0 + 190, y0, figure_height)
+    dwarf(draw, x0 + 260, y0, figure_height)
 
-x0 = 20
-y0 = height - 70
-dwarf(draw, x0, y0, figure_height)
-dwarf(draw, x0 + 80, y0, figure_height)
-dwarf(draw, x0 + 190, y0, figure_height)
-dwarf(draw, x0 + 260, y0, figure_height)
+    im.save("dwarves.png")
+    im.show()
 
-im.save("dwarves.png")
-im.show()
+landscape()
