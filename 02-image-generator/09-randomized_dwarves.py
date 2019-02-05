@@ -4,6 +4,7 @@ from PIL import Image, ImageDraw
 
 WIDTH = 2000
 HEIGHT = 400
+FIGURE_HEIGHT = 80
 DWARF_CLOTHES = (240, 30, 20)
 GRAY_BEARD = (240, 240, 240)
 FACE_COLOR = (255, 182, 193)
@@ -105,13 +106,12 @@ def house(draw, lower_left_house_anchor, house_size):
     house_roof(draw, lower_left_roof_anchor, roof_size)
 
 
-def landscape(width, height):
+def landscape(width, height, figure_height):
     im = Image.new("RGB", (width, height), BACKGROUND)
 
     # https://pillow.readthedocs.io/en/latest/reference/ImageDraw.html
     draw = ImageDraw.Draw(im)
     grass_height = int(height // 3)
-    figure_height = 80
     grass(draw, width, height, grass_height)
 
     house_width = min(300, width // 3)
@@ -131,4 +131,4 @@ def landscape(width, height):
     im.show()
 
 
-landscape(WIDTH, HEIGHT)
+landscape(WIDTH, HEIGHT, FIGURE_HEIGHT)
