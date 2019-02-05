@@ -13,6 +13,7 @@ HOUSE_WALL = (230, 150, 100)
 HOUSE_DOOR = (200, 120, 90)
 HOUSE_ROOF = (240, 60, 60)
 
+
 def hat(draw, x0, x1, head_center, r):
     head_x, head_y = head_center
     left_bottom = (x0 - r // 1.5, head_y)
@@ -21,10 +22,10 @@ def hat(draw, x0, x1, head_center, r):
     draw.polygon((left_bottom, right_bottom, top), fill=DWARF_CLOTHES)
 
 
-def beard(draw, x0, x1, head_center, r):
+def beard(draw, leftmost_x, rightmost_x, head_center, r):
     head_x, head_y = head_center
-    left_top = (x0, head_y + r // 2)
-    right_top = (x1, head_y + r // 2)
+    left_top = (leftmost_x, head_y + r // 2)
+    right_top = (rightmost_x, head_y + r // 2)
     bottom = (head_x, head_y + 2*r)
     draw.polygon((left_top, right_top, bottom), fill=GRAY_BEARD)
 
@@ -35,18 +36,25 @@ def face(draw, head_center, r):
     draw.ellipse(circle_bounding_box, fill=FACE_COLOR)
 
 
-def dwarf(draw, x0, y0, figure_height):
-    figure_width = figure_height//2.5
-    x1 = x0 + figure_width
-    y1 = y0 - figure_height
-    draw.rectangle(((x0, y0), (x1, y1)), fill=DWARF_CLOTHES)
-    head_x = (x0 + x1)//2
-    head_y = y1
-    r = figure_width // 1.5
+def body(draw, leftmost_x, bottom_y, body_height, body_width):
+    bottom_left_corner = (leftmost_x, bottom_y)
+    top_right_corner = (leftmost_x + body_width, bottom_y - body_height)
+    draw.rectangle((bottom_left_corner, top_right_corner), fill=DWARF_CLOTHES)
+
+
+def dwarf(draw, leftmost_x, bottom_y, figure_height):
+    head_to_body_ratio = 0.2
+    # half of head is within body rectangle
+    body_height = figure_height // (1 + head_to_body_ratio / 2)
+    body_width = figure_height//2.5
+    head_x = leftmost_x + body_width//2
+    head_y = bottom_y - body_height
+    r = body_width // 1.5
     head_center = head_x, head_y
+    body(draw, leftmost_x, bottom_y, body_height, body_width)
     face(draw, head_center, r)
-    hat(draw, x0, x1, head_center, r)
-    beard(draw, x0, x1, head_center, r)
+    hat(draw, leftmost_x, leftmost_x + body_width, head_center, r)
+    beard(draw, leftmost_x, leftmost_x + body_width, head_center, r)
 
 
 def grass(draw, width, height, grass_height):
