@@ -42,14 +42,6 @@ def dwarf(draw, x0, y0, figure_height):
     beard(draw, x0, x1, head_center, r)
 
 
-def grass(draw, width, height):
-    x0 = 0
-    y0 = height - 1
-    x1 = width - 1
-    y1 = height - grass_height
-    draw.rectangle(((x0, y0), (x1, y1)), fill=(20, 230, 20))
-
-
 width = 2000
 height = 400
 im = Image.new("RGB", (width, height), (110, 200, 110))
@@ -57,11 +49,10 @@ im = Image.new("RGB", (width, height), (110, 200, 110))
 # https://pillow.readthedocs.io/en/latest/reference/ImageDraw.html
 draw = ImageDraw.Draw(im)
 
-grass_height = height // 3
 figure_height = 80
 
 x0 = 20
-y0 = height - grass_height // 2
+y0 = height - 70
 dwarf(draw, x0, y0, figure_height)
 dwarf(draw, x0 + 80, y0, figure_height)
 dwarf(draw, x0 + 190, y0, figure_height)
