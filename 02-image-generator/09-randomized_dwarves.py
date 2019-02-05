@@ -17,16 +17,16 @@ AVERAGE_DWARF_COUNT = 20
 
 def hat(draw, x0, x1, head_center, r):
     head_x, head_y = head_center
-    left_bottom = (x0 - 15, head_y)
-    right_bottom = (x1 + 15, head_y)
-    top = (head_x, head_y - 30 - random.randint(0, 4*r))
+    left_bottom = (x0 - r // 1.5, head_y)
+    right_bottom = (x1 + r // 1.5, head_y)
+    top = (head_x, head_y - r // 0.75 - random.randint(0, 4*r))
     draw.polygon((left_bottom, right_bottom, top), fill=DWARF_CLOTHES)
 
 
 def beard(draw, x0, x1, head_center, r):
     head_x, head_y = head_center
-    left_top = (x0, head_y + 10)
-    right_top = (x1, head_y + 10)
+    left_top = (x0, head_y + r // 2)
+    right_top = (x1, head_y + r // 2)
     bottom = (head_x, head_y + 30 + random.randint(0, 4*r))
     draw.polygon((left_top, right_top, bottom), fill=GRAY_BEARD)
 
