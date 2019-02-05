@@ -5,6 +5,8 @@ lets draw dwarf using as simplest geometry elements as possible
 """
 from PIL import Image, ImageDraw
 
+WIDTH = 2000
+HEIGHT = 400
 DWARF_CLOTHES = (240, 30, 20)
 GRAY_BEARD = (240, 240, 240)
 FACE_COLOR = (255, 182, 193)
@@ -45,9 +47,7 @@ def dwarf(draw, x0, y0, figure_height):
     hat(draw, x0, x1, head_center, r)
     beard(draw, x0, x1, head_center, r)
 
-def landscape():
-    width = 2000
-    height = 400
+def landscape(width, height):
     im = Image.new("RGB", (width, height), BACKGROUND)
 
     # https://pillow.readthedocs.io/en/latest/reference/ImageDraw.html
@@ -65,4 +65,4 @@ def landscape():
     im.save("dwarves.png")
     im.show()
 
-landscape()
+landscape(WIDTH, HEIGHT)
