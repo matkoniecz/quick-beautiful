@@ -91,7 +91,9 @@ def house_roof(draw, lower_left_roof_anchor, roof_size):
     roof_width, roof_height = roof_size
     lower_left = (left_roof_anchor_x, left_roof_anchor_y)
     lower_right = (left_roof_anchor_x + roof_width, left_roof_anchor_y)
-    roof_top = (left_roof_anchor_x + roof_width//2, left_roof_anchor_y - roof_height)
+    middle_of_the_roof_horizontal = left_roof_anchor_x + roof_width//2
+    roof_top_vertical = left_roof_anchor_y - roof_height
+    roof_top = (middle_of_the_roof_horizontal, roof_top_vertical)
     draw.polygon((lower_left, lower_right, roof_top), fill=HOUSE_ROOF)
 
 
