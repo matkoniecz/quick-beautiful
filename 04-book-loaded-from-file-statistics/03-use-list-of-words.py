@@ -1,5 +1,6 @@
 text = "Ala ma żółtego kota"
 
+print("text:", text)
 print("words:")
 for word in text.split():
     print(word)
