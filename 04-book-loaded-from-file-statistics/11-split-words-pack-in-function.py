@@ -7,17 +7,14 @@ def text_into_word_array(text):
     return text.split()
 
 
-# note multiline string definition
-text = """Ojcze nasz, któryś jest w niebie
-święć się imię Twoje;
-przyjdź królestwo Twoje;
-bądź wola Twoja jako w niebie tak i na ziemi;
-chleba naszego powszedniego daj nam dzisiaj;
-i odpuść nam nasze winy,
-jako i my odpuszczamy naszym winowajcom;
-i nie wódź nas na pokuszenie;
-ale nas zbaw od złego.
-
-Amen."""
+# note splits without introducing newlines
+text = "KARTOFLE Z PIECA. Kartofle surowe, obrane z łupinek, pokrajać w \
+cieniuchne płatki. Na kilo takich kartofli (już obranych) wziąć pięć deka \
+szmalcu i pięć deka masła. Dwadzieścia deka cebuli pokrajać w paski, \
+przesmażyć ze szmalcem i masłem, włożyć kartofle, smażyć dalej na wolnym \
+ogniu, potrząsając patelnią i mięszając. Po dziesięciu minutach osolić, \
+popieprzyć, przełożyć do ogniotrwałej foremki lub nelsonki, wstawić w miernie \
+gorący piec na pół godziny lub nieco więcej. Podawać w tem samem naczyniu, \
+posypane zielonym koperkiem lub pietruszeczką.."
 
 print(text_into_word_array(text))
