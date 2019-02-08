@@ -15,4 +15,4 @@ ale nas zbaw od złego.
 
 Amen."""
 
-print(re.split(r'\W+', text))
+print(re.findall(r'\w+', text))
