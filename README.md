@@ -33,7 +33,17 @@ Making an image out of simple shapes. For example group of dwarves in from of th
 
 ![dwarves.png](dwarves.png)
 
-## Text statistics
+## Lists and simple statistics
+
+Introduction to lists - very basic level (showing list, looping through a list).
+
+## Splitting text into words
+
+Building function that will split text into words.
+
+## Book statistics
+
+Loading entire book and outputting statistics. Doing in minutes what before computers needed [years](https://en.wikipedia.org/wiki/Concordance_(publishing)).
 
 ## Sierpiński's carpet
 
