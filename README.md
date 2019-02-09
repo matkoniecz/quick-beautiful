@@ -18,6 +18,7 @@ Code in this repository is a mix of material already used and tested, ideas for 
 All images below were created using code from this repository.
 
 ## Hello world
+
 Standard hello world example.
 
 ## Mandelbrot visualisation
