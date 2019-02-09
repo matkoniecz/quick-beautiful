@@ -2,6 +2,8 @@
 
 Programming exercises for beginners that I collected and prepared.
 
+Repository contains overview readme file that you are reading and folders with materials for each exercise. Each folder contains code in stages from simplest one to a finished project. Some folder contain also additional data like example data ready for processing.
+
 Tutorial materials for work with a beginner, mostly code in stages from scratch to a completed work.
 
 I am searching for exercises that can be solved with a simple code and give properly impressive results. Results that may be
