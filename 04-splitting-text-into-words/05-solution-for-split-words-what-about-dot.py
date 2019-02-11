@@ -1,7 +1,7 @@
 text = "Ala ma żółtego kota."
 print("before")
 print(text)
-text = text.replace(".", "")
+text = text.replace(".", " ")
 
 print()
 print("after")
