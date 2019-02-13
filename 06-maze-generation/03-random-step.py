@@ -22,7 +22,7 @@ def move_in_random_cardinal_direction(point):
 def main():
     im = Image.new("RGB", (WIDTH, HEIGHT), WALL_COLOR)
     pixels = im.load()
-    position = (WIDTH/2, HEIGHT/2)
+    position = (WIDTH//2, HEIGHT//2)
     pixels[position[0], position[1]] = PASSAGE_COLOR
     position = move_in_random_cardinal_direction(position)
     pixels[position[0], position[1]] = PASSAGE_COLOR
