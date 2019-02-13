@@ -1,6 +1,13 @@
 from PIL import Image
 import random
 
+WIDTH = 200
+HEIGHT = 200
+WHITE = (255, 255, 255)
+PASSAGE_COLOR = WHITE
+BLACK = (0, 0, 0)
+WALL_COLOR = BLACK
+
 def move_in_random_cardinal_direction(point):
     randomized = random.randint(1, 4)
     if randomized == 1:
@@ -24,12 +31,6 @@ def is_outside_area(position, WIDTH, HEIGHT):
     return False
 
 def main():
-    WIDTH = 200
-    HEIGHT = 200
-    WHITE = (255, 255, 255)
-    PASSAGE_COLOR = WHITE
-    BLACK = (0, 0, 0)
-    WALL_COLOR = BLACK
     im = Image.new("RGB", (WIDTH, HEIGHT), WALL_COLOR)
     pixels = im.load()
     position = (WIDTH/2, HEIGHT/2)
