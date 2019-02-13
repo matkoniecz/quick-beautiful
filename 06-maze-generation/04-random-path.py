@@ -12,7 +12,7 @@ def move_in_random_cardinal_direction(point):
     else:
         return (point[0], point[1] - 1)
 
-def is_illegal_position(position, WIDTH, HEIGHT):
+def is_outside_area(position, WIDTH, HEIGHT):
     if position[0] < 0:
         return True
     if position[0] >= WIDTH:
@@ -23,20 +23,23 @@ def is_illegal_position(position, WIDTH, HEIGHT):
         return True
     return False
 
-WIDTH = 200
-HEIGHT = 200
-WHITE = (255, 255, 255)
-PASSAGE = WHITE
-BLACK = (0, 0, 0)
-WALL = BLACK
-im = Image.new("RGB", (WIDTH, HEIGHT), WALL)
-pixels = im.load()
-position = (random.randint(0, WIDTH-1), random.randint(0, HEIGHT-1))
-for _ in range(5000):
-    pixels[position[0], position[1]] = PASSAGE
-    position = move_in_random_cardinal_direction(position)
-    if is_illegal_position(position, WIDTH, HEIGHT):
-        break
+def main():
+    WIDTH = 200
+    HEIGHT = 200
+    WHITE = (255, 255, 255)
+    PASSAGE_COLOR = WHITE
+    BLACK = (0, 0, 0)
+    WALL_COLOR = BLACK
+    im = Image.new("RGB", (WIDTH, HEIGHT), WALL_COLOR)
+    pixels = im.load()
+    position = (random.randint(0, WIDTH-1), random.randint(0, HEIGHT-1))
+    for _ in range(5000):
+        pixels[position[0], position[1]] = PASSAGE_COLOR
+        position = move_in_random_cardinal_direction(position)
+        if is_outside_area(position, WIDTH, HEIGHT):
+            break
 
-im.save("maze.png")
-im.show()  # it may not work in rare cases, but generally very, very useful
+    im.save("maze.png")
+    im.show()  # it may not work in rare cases, but generally very, very useful
+
+main()

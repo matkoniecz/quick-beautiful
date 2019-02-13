@@ -12,18 +12,21 @@ def move_in_random_cardinal_direction(point):
     else:
         return (point[0], point[1] - 1)
 
-WIDTH = 200
-HEIGHT = 200
-WHITE = (255, 255, 255)
-PASSAGE = WHITE
-BLACK = (0, 0, 0)
-WALL = BLACK
-im = Image.new("RGB", (WIDTH, HEIGHT), WALL)
-pixels = im.load()
-position = (random.randint(0, WIDTH-1), random.randint(0, HEIGHT-1))
-pixels[position[0], position[1]] = PASSAGE
-position = move_in_random_cardinal_direction(position)
-pixels[position[0], position[1]] = PASSAGE
+def main():
+    WIDTH = 200
+    HEIGHT = 200
+    WHITE = (255, 255, 255)
+    PASSAGE_COLOR = WHITE
+    BLACK = (0, 0, 0)
+    WALL_COLOR = BLACK
+    im = Image.new("RGB", (WIDTH, HEIGHT), WALL_COLOR)
+    pixels = im.load()
+    position = (random.randint(0, WIDTH-1), random.randint(0, HEIGHT-1))
+    pixels[position[0], position[1]] = PASSAGE_COLOR
+    position = move_in_random_cardinal_direction(position)
+    pixels[position[0], position[1]] = PASSAGE_COLOR
 
-im.save("maze.png")
-im.show()  # it may not work in rare cases, but generally very, very useful
+    im.save("maze.png")
+    im.show()  # it may not work in rare cases, but generally very, very useful
+
+main()
