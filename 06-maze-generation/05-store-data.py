@@ -10,6 +10,7 @@ WALL_COLOR = BLACK
 PASSAGE = 1
 WALL = 0
 
+
 def move_in_random_cardinal_direction(point):
     randomized = random.randint(1, 4)
     if randomized == 1:
@@ -21,6 +22,7 @@ def move_in_random_cardinal_direction(point):
     else:
         return (point[0], point[1] - 1)
 
+
 def is_outside_area(position, WIDTH, HEIGHT):
     if position[0] < 0:
         return True
@@ -31,6 +33,7 @@ def is_outside_area(position, WIDTH, HEIGHT):
     if position[1] >= HEIGHT:
         return True
     return False
+
 
 def print_maze_to_console(MAZE):
     WIDTH = len(MAZE)
@@ -76,5 +79,6 @@ def main():
     print()
     print_maze_to_console(maze)
     print_maze_to_image_file(maze, WALL_COLOR, PASSAGE_COLOR, "maze.png")
+
 
 main()
