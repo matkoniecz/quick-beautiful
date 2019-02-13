@@ -10,11 +10,11 @@ During day? Night? Sunset?
 Building blocks are the same but...
 """
 from PIL import Image
-width = 200
-height = 200
+WIDTH = 200
+HEIGHT = 200
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
-im = Image.new("RGB", (width, height), RED)
+im = Image.new("RGB", (WIDTH, HEIGHT), RED)
 pixels = im.load()
 pixels[10, 10] = GREEN
 

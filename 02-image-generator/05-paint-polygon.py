@@ -1,12 +1,12 @@
 from PIL import Image, ImageDraw
-width = 200
-height = 200
+WIDTH = 200
+HEIGHT = 200
 GRAY = (100, 100, 100)
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 MUTED_BLUE = (50, 200, 250)
-im = Image.new("RGB", (width, height), GRAY)
+im = Image.new("RGB", (WIDTH, HEIGHT), GRAY)
 
 # https://pillow.readthedocs.io/en/latest/reference/ImageDraw.html
 draw = ImageDraw.Draw(im)
