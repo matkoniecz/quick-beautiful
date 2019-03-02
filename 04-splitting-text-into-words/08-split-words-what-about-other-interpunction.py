@@ -1,4 +1,5 @@
 text = "Ala ma żółtego kota, trzy chomiki i złotą rybkę!"
-text = text.replace(".", "")
+for char in ['.', '!']:
+    text = text.replace(char, "")
 print("failing!")
 print(text.split())

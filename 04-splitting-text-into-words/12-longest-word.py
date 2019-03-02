@@ -1,8 +1,5 @@
-import string
-
-
 def text_into_word_array(text):
-    for char in string.punctuation:
+    for char in ['.', ',', '!', '(', ')', ':', ';', '?', '{', '}', '[', ']']:
         text = text.replace(char, " ")
     return text.split()
 

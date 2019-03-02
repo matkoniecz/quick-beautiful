@@ -1,6 +1,4 @@
-import string
-
 text = "Ala ma żółtego kota."
-for char in string.punctuation:
+for char in ['.', ',', '!', '(', ')', ':', ';', '?', '{', '}', '[', ']']:
     text = text.replace(char, "")
 print(text.split())

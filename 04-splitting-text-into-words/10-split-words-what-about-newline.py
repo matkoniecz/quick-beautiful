@@ -1,5 +1,3 @@
-import string
-
 # note multiline string definition
 text = """Ojcze nasz, któryś jest w niebie
 święć się imię Twoje;
@@ -14,6 +12,6 @@ ale nas zbaw od złego.
 Amen."""
 
 print("works, nice:")
-for char in string.punctuation:
+for char in ['.', ',', '!', '(', ')', ':', ';', '?', '{', '}', '[', ']']:
     text = text.replace(char, " ")
 print(text.split())
