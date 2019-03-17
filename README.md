@@ -45,6 +45,26 @@ Building function that will split text into words.
 
 Loading entire book and outputting statistics. Doing in minutes what before computers needed [years](https://en.wikipedia.org/wiki/Concordance_(publishing)).
 
+Book texts are in public domain and were obtained from:
+
+[Project Gutenberg](http://www.gutenberg.org/)
+
+* A Christmas Carol in Prose; Being a Ghost Story of Christmas by Charles Dickens
+* Moby Dick; or The Whale, by Herman Melville
+
+[Wikiźródła](https://pl.wikisource.org/)
+
+* Ania z Wyspy, Lucy Maud Montgomery, przełożył Andrzej Magórski
+
+[Wolne Lektury](https://wolnelektury.pl/)
+
+* Anhelli, Juliusz Słowacki
+
+Short texts covered by fair use:
+
+* "Torched the haystack. Found the needle." by Newtonswig
+* "Voyager still transmitted, but Earth didn’t." by ErasedCitizen
+
 ## Sierpiński's carpet
 
 More complicated case of recursion.
