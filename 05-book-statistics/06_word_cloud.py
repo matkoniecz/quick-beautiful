@@ -19,20 +19,8 @@ def word_cloud(word_frequencies):
     wordcloud = WordCloud().generate_from_frequencies(word_frequencies)
 
     # Display the generated image:
-    # the matplotlib way:
-    import matplotlib.pyplot as plt
-    plt.imshow(wordcloud, interpolation='bilinear')
-    plt.axis("off")
-
-    # lower max_font_size
-    plt.figure()
-    plt.imshow(wordcloud, interpolation="bilinear")
-    plt.axis("off")
-    plt.show()
-
-    # The pil way (if you don't have matplotlib)
-    # image = wordcloud.to_image()
-    # image.show()
+    image = wordcloud.to_image()
+    image.show()
     
 
 def text_words(text):
