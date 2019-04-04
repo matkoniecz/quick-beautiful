@@ -65,6 +65,8 @@ Short texts covered by fair use:
 * "Torched the haystack. Found the needle." by Newtonswig
 * "Voyager still transmitted, but Earth didn’t." by ErasedCitizen
 
+[Unifont font file](http://unifoundry.com/unifont/index.html) is embedded into this document under its font embedding exception.
+
 ## Sierpiński's carpet
 
 More complicated case of recursion.
