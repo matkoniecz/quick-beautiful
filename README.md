@@ -67,6 +67,8 @@ Short texts covered by fair use:
 
 [Unifont font file](http://unifoundry.com/unifont/index.html) is embedded into this document under its font embedding exception.
 
+[SpaceGrotesk font files](https://github.com/floriankarsten/space-grotesk) are OFL-1.1 licensed and were found on [beautiful-web-type project](https://github.com/ubuwaits/beautiful-web-type).
+
 ## Sierpiński's carpet
 
 More complicated case of recursion.

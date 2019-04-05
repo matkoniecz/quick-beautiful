@@ -9,7 +9,7 @@ def generate_image_with_text(text_lines):
     BLACK = (0, 0, 0)
     im = Image.new("RGB", (width, height), WHITE)
     y_line_anchor = 10
-    font=ImageFont.truetype("unifont-12.0.01.ttf",14)
+    font=ImageFont.truetype("SpaceGrotesk-SemiBold.otf",14)
     for line in text_lines:
         ImageDraw.Draw(
             im
