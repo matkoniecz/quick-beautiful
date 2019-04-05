@@ -21,6 +21,7 @@ def word_cloud(word_frequencies):
     # Display the generated image:
     image = wordcloud.to_image()
     image.show()
+    image.save('word_cloud.png')
     
 
 def text_words(text):
