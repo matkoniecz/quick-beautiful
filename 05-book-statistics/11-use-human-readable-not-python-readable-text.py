@@ -42,8 +42,8 @@ def frequency_list_as_list_of_lines(word_frequencies):
 
 
 def text_words(text):
-    zlikwidować = ['.', ',', '!', ':', ';', '?', '(', ')', '—', '”', '“']
-    for znak in zlikwidować:
+    for_removal = ['.', ',', '!', ':', ';', '?', '(', ')', '—', '”', '“']
+    for znak in for_removal:
         text = text.replace(znak, " ")
     return text.lower().split()
 

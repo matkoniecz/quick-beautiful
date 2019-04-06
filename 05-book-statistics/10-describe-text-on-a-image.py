@@ -34,8 +34,8 @@ def load_text_and_describe_it(filepath):
 
 
 def text_words(text):
-    zlikwidować = ['.', ',', '!', ':', ';', '?', '(', ')', '—', '”', '“']
-    for znak in zlikwidować:
+    for_removal = ['.', ',', '!', ':', ';', '?', '(', ')', '—', '”', '“']
+    for znak in for_removal:
         text = text.replace(znak, " ")
     return text.lower().split()
 
