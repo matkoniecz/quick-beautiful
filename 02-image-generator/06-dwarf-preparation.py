@@ -3,8 +3,6 @@ landscape generation topic: dwarves in front of their home
 
 lets draw dwarf using as simplest geometry elements as possible 
 """
-from PIL import Image, ImageDraw
-
 WIDTH = 2000
 HEIGHT = 400
 FIGURE_HEIGHT = 80
