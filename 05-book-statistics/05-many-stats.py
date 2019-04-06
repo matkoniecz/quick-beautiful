@@ -1,6 +1,7 @@
 import collections
 import os
 
+# docs at https://github.com/amueller/word_cloud
 
 def main():
     filepath = os.path.join('texts_for_processing', 'Ania z Wyspy, Lucy Maud Montgomery, przełożył Andrzej Magórski.txt')
