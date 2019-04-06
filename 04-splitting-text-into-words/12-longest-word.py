@@ -20,6 +20,7 @@ def show_longest_word(text):
         print()
     print(longest_word)
 
+
 show_longest_word("Ala ma kota. Marysia ma rysia. Czyli Marysia też ma kota.")
 show_longest_word("!!!!!!!!!!")
 show_longest_word("Aaaaaaaaaaaaaaaaaaaaaaaaby żółwia sprzedam")

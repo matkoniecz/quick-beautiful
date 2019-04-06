@@ -7,7 +7,7 @@ height = 200
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 im = Image.new("RGB", (width, height), WHITE)
-font=ImageFont.truetype("unifont-12.0.01.ttf",14)
+font = ImageFont.truetype("unifont-12.0.01.ttf", 14)
 
 ImageDraw.Draw(
     im

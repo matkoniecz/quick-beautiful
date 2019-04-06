@@ -34,6 +34,7 @@ def is_outside_area(position, WIDTH, HEIGHT):
         return True
     return False
 
+
 def is_joining_itself(position, parent, grandparent, MAZE):
     WIDTH = len(MAZE)
     HEIGHT = len(MAZE[0])
@@ -47,6 +48,7 @@ def is_joining_itself(position, parent, grandparent, MAZE):
             if MAZE[checked_position[0]][checked_position[1]] == PASSAGE:
                 return True
     return False
+
 
 def is_forbidden_position(position, parent, grandparent, MAZE):
     WIDTH = len(MAZE)

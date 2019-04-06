@@ -10,7 +10,7 @@ im = Image.new("RGB", (width, height), WHITE)
 # font from https://github.com/floriankarsten/space-grotesk
 # found at https://github.com/ubuwaits/beautiful-web-type
 # https://github.com/google/fonts also has some fine fonts
-font=ImageFont.truetype("SpaceGrotesk-SemiBold.otf",14)
+font = ImageFont.truetype("SpaceGrotesk-SemiBold.otf", 14)
 
 ImageDraw.Draw(
     im

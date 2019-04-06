@@ -2,6 +2,7 @@ from PIL import ImageDraw
 from PIL import ImageFont
 from PIL import Image
 
+
 def generate_image_with_text(text_lines):
     width = 200
     height = 200
@@ -9,7 +10,7 @@ def generate_image_with_text(text_lines):
     BLACK = (0, 0, 0)
     im = Image.new("RGB", (width, height), WHITE)
     y_line_anchor = 10
-    font=ImageFont.truetype("SpaceGrotesk-SemiBold.otf",14)
+    font = ImageFont.truetype("SpaceGrotesk-SemiBold.otf", 14)
     for line in text_lines:
         ImageDraw.Draw(
             im

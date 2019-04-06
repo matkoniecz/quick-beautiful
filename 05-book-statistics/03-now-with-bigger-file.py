@@ -1,6 +1,7 @@
 import string
 import os
 
+
 def text_into_word_array(text):
     for char in ['.', ',', '!', '(', ')', ':', ';', '?', '{', '}', '[', ']']:
         text = text.replace(char, " ")

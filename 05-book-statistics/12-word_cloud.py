@@ -2,6 +2,7 @@ import os
 import collections
 from wordcloud import WordCloud
 
+
 def main():
     filepath = os.path.join('texts_for_processing', 'Ania z Wyspy, Lucy Maud Montgomery, przełożył Andrzej Magórski.txt')
     with open(filepath, 'r', encoding='utf-8') as book_file:
@@ -20,12 +21,13 @@ def word_cloud(word_frequencies):
     image = wordcloud.to_image()
     image.show()
     image.save('word_cloud.png')
-    
+
 
 def text_words(text):
-    zlikwidować = ['.',',','!',':',';','?','(',')', '—', '”', '“']
+    zlikwidować = ['.', ',', '!', ':', ';', '?', '(', ')', '—', '”', '“']
     for znak in zlikwidować:
-        text = text.replace(znak," ")
+        text = text.replace(znak, " ")
     return text.lower().split()
+
 
 main()
