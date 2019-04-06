@@ -13,10 +13,10 @@ def main():
             if len(longest_word) < len(word):
                 longest_word = word
         print("najdłuższe słowo:", longest_word)
-        zliczacz = collections.Counter()
-        zliczacz.update(words)
-        print("najczęstsze słowa:", zliczacz.most_common(50))
-        print("najrzadsze słowa:", zliczacz.most_common()[-10:-1])
+        word_frequencies = collections.Counter()
+        word_frequencies.update(words)
+        print("najczęstsze słowa:", word_frequencies.most_common(50))
+        print("najrzadsze słowa:", word_frequencies.most_common()[-10:-1])
         print("ile znaków książce:", len(book_text))
         print("ilość stron:", len(book_text)//1800+1)
         unique_words = set(words)

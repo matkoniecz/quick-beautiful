@@ -23,9 +23,9 @@ def load_text_and_describe_it(filepath):
             if len(longest_word) < len(word):
                 longest_word = word
         returned.append("najdłuższe słowo: " + longest_word)
-        zliczacz = collections.Counter()
-        zliczacz.update(words)
-        returned.append("najczęstsze słowa: " + str(zliczacz.most_common(5)))
+        word_frequencies = collections.Counter()
+        word_frequencies.update(words)
+        returned.append("najczęstsze słowa: " + str(word_frequencies.most_common(5)))
         returned.append("ile znaków książce: " + str(len(book_text)))
         returned.append("ilość stron: " + str(len(book_text)//1800+1))
         unique_words = set(words)
