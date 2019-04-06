@@ -63,5 +63,6 @@ def generate_image_with_text(text_lines):
         y_line_anchor += 18
 
     im.show()
+    im.save('text_description.png')
 
 main()
