@@ -1,7 +1,5 @@
 import os
 import collections
-
-import os
 from wordcloud import WordCloud
 
 def main():
