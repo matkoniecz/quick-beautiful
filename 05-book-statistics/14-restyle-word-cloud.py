@@ -14,7 +14,9 @@ def main():
     generate_image_with_text(['Ania z Wyspy', ''] + statistics, 'text_description.png')
     base = Image.open("text_description.png")
     word_cloud = Image.open("word_cloud.png")
-    base.paste(word_cloud, (300, 40))
+    x_anchor = result_image_size()[0]-word_cloud_size()[0]
+    y_anchor = int((result_image_size()[1]-word_cloud_size()[1])/2)
+    base.paste(word_cloud, (x_anchor, y_anchor))
     base.show()
 
 def background_color():
@@ -22,6 +24,15 @@ def background_color():
 
 def text_color():
     return (28, 28, 28)
+
+def result_image_size():
+    return (800, 300)
+
+def word_cloud_size():
+    return (int(result_image_size()[0]*2/3), int(result_image_size()[1]*0.9))
+
+def font_filepath():
+    return "SpaceGrotesk-SemiBold.otf"
 
 def word_to_color(word, **kwargs):
     return text_color()
@@ -35,7 +46,14 @@ def make_word_cloud(book_file_filepath, output_filepath):
         word_frequencies.update(words)
 
         # Generate a word cloud image
-        wordcloud = WordCloud(background_color=background_color()).generate_from_frequencies(word_frequencies)
+        wordcloud = WordCloud(
+            background_color=background_color(),
+            repeat=False,
+            font_path=font_filepath(),
+            width = word_cloud_size()[0],
+            height = word_cloud_size()[1],
+            )
+        wordloud = wordcloud.generate_from_frequencies(word_frequencies)
         wordcloud.recolor(color_func=word_to_color)
 
         # Display the generated image:
@@ -87,11 +105,9 @@ def text_words(text):
 
 
 def generate_image_with_text(text_lines, output_filepah):
-    width = 800
-    height = 300
-    im = Image.new("RGB", (width, height), background_color())
+    im = Image.new("RGB", result_image_size(), background_color())
     y_line_anchor = 10
-    font = ImageFont.truetype("SpaceGrotesk-SemiBold.otf", 14)
+    font = ImageFont.truetype(font_filepath(), 14)
     for line in text_lines:
         ImageDraw.Draw(
             im
