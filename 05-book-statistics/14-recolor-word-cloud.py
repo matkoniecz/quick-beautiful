@@ -17,6 +17,15 @@ def main():
     base.paste(word_cloud, (300, 40))
     base.show()
 
+def background_color():
+    return (255, 255, 255)
+
+def text_color():
+    return (28, 28, 28)
+
+def word_to_color(word, **kwargs):
+    return text_color()
+    
 
 def make_word_cloud(book_file_filepath, output_filepath):
     with open(book_file_filepath, 'r', encoding='utf-8') as book_file:
@@ -26,7 +35,8 @@ def make_word_cloud(book_file_filepath, output_filepath):
         word_frequencies.update(words)
 
         # Generate a word cloud image
-        wordcloud = WordCloud().generate_from_frequencies(word_frequencies)
+        wordcloud = WordCloud(background_color=background_color()).generate_from_frequencies(word_frequencies)
+        wordcloud.recolor(color_func=word_to_color)
 
         # Display the generated image:
         image = wordcloud.to_image()
@@ -79,9 +89,7 @@ def text_words(text):
 def generate_image_with_text(text_lines, output_filepah):
     width = 800
     height = 300
-    WHITE = (255, 255, 255)
-    BLACK = (0, 0, 0)
-    im = Image.new("RGB", (width, height), WHITE)
+    im = Image.new("RGB", (width, height), background_color())
     y_line_anchor = 10
     font = ImageFont.truetype("SpaceGrotesk-SemiBold.otf", 14)
     for line in text_lines:
@@ -90,7 +98,7 @@ def generate_image_with_text(text_lines, output_filepah):
         ).text(
             (10, y_line_anchor),
             line,
-            BLACK,
+            text_color(),
             font=font
         )
         y_line_anchor += 18
