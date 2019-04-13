@@ -1,11 +1,11 @@
 from PIL import Image
-width = 200
-height = 200
+WIDTH = 200
+HEIGHT = 200
 WHITE = (255, 255, 255)
 PASSAGE_COLOR = WHITE
 BLACK = (0, 0, 0)
 WALL_COLOR = BLACK
-im = Image.new("RGB", (width, height), WALL_COLOR)
+im = Image.new("RGB", (WIDTH, HEIGHT), WALL_COLOR)
 pixels = im.load()
 pixels[10, 10] = PASSAGE_COLOR
 
