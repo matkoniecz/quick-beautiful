@@ -28,7 +28,7 @@ def make_pattern(draw, x, y, section_size, remaining_levels, hole_color):
         return
     hole_color = (255, 255, 255)
     corner = (x + section_size / 3, y + section_size / 3)
-    # -1 necessary due to https://github.com/python-pillow/Pillow/issues/3597
+    # -1 necessary due to https://github.com/python-pillow/Pillow/issues/1668
     opposite_corner = (x + section_size * 2/3 - 1, y + section_size * 2/3 - 1)
     draw.rectangle((corner, opposite_corner), fill=hole_color)
     parts = 3

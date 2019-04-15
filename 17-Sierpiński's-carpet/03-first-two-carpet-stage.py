@@ -13,7 +13,7 @@ def main():
     draw = ImageDraw.Draw(carpet_with_first_hole)
 
     corner = (size / 3, size / 3)
-    # -1 necessary due to https://github.com/python-pillow/Pillow/issues/3597
+    # -1 necessary due to https://github.com/python-pillow/Pillow/issues/1668
     opposite_corner = (size * 2/3 - 1, size * 2/3 - 1)
     draw.rectangle((corner, opposite_corner), fill=hole_color)
 
