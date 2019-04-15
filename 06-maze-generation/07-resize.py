@@ -4,9 +4,9 @@ import time
 
 
 def main():
-    WIDTH = 200
-    HEIGHT = 200
-    PIXEL_SIZE = 10
+    WIDTH = 319
+    HEIGHT = 168
+    PIXEL_SIZE = 6
     WHITE = (255, 255, 255)
     PASSAGE_COLOR = WHITE
     BLACK = (0, 0, 0)
