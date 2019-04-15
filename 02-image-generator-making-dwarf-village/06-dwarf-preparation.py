@@ -12,30 +12,30 @@ FACE_COLOR = (255, 182, 193)
 BACKGROUND = (110, 200, 110)
 
 
-def body():
-    print("draw dwarf body - red rectangle")
-
-
-def face():
-    print("draw dwarf face - pink circle")
-
-
-def beard():
-    print("draw dwarf beard - gray triangle")
-
+def landscape():
+    """draw landscape with dwarfs in it"""
+    dwarf()
+    dwarf()
+    dwarf()
 
 def dwarf():
+    """draw dwarf"""
     print()
     print("drawing dwarf!")
     body()
     face()
     beard()
 
+def beard():
+    """draw beard of a dwarf"""
+    print("draw dwarf beard - gray triangle")
 
-def landscape():
-    dwarf()
-    dwarf()
-    dwarf()
+def face():
+    """draw face of a dwarf"""
+    print("draw dwarf face - pink circle")
 
+def body():
+    """draw body of a dwarf"""
+    print("draw dwarf body - red rectangle")
 
 landscape()
