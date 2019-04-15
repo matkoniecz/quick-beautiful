@@ -15,6 +15,7 @@ def main():
     im3 = Image.new("RGBA", (width, height), WHITE)
     save_animated_gif("out.gif", [im1, im2, im3], 900)
 
+
 def save_animated_gif(filename, images, duration):
     """merges files into a single animated gif and saves it at the specified location"""
     # done using https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html#saving
@@ -31,5 +32,6 @@ def check_version():
     print("see release notes in")
     print("https://pillow.readthedocs.io/en/latest/releasenotes/3.4.0.html#append-images-to-gif")
     raise RuntimeError("upgrade pillow library, to at least 3.4")
+
 
 main()

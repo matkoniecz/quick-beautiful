@@ -12,6 +12,7 @@ def main():
 
     save_animated_gif("Sierpiński's carpet.gif", carpets, 1200)
 
+
 def save_animated_gif(filename, images, duration):
     """merges files into a single animated gif and saves it at the specified location"""
     # done using https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html#saving
@@ -44,5 +45,6 @@ def make_carpet(levels, size):
     draw = ImageDraw.Draw(carpet)
     make_pattern(draw, 0, 0, size, levels, hole_color=WHITE)
     return carpet
+
 
 main()

@@ -17,6 +17,7 @@ def main():
 
     save_animated_gif("Sierpiński's carpet.gif", carpets, durations)
 
+
 def save_animated_gif(filename, images, duration):
     """merges files into a single animated gif and saves it at the specified location"""
     # done using https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html#saving

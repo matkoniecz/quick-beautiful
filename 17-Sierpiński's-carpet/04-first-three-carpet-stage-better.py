@@ -12,6 +12,7 @@ def main():
     animation = [carpet_without_hole, carpet_with_first_hole, third_carpet]
     save_animated_gif("Sierpiński's carpet.gif", animation, 1200)
 
+
 def save_animated_gif(filename, images, duration):
     """merges files into a single animated gif and saves it at the specified location"""
     # done using https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html#saving
