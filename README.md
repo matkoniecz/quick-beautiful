@@ -113,6 +113,16 @@ Rule `C0111` requesting docstrings is disabled, the same with `W0621` complainin
 
 Command based on one by [Jim Lewis](https://stackoverflow.com/a/10523492/4130619)
 
+# Skipped concepts
+
+Some more advanced techniques were ignored in code presented here, despite that code may be a bit cleaner.
+
+For example `if __name__ == '__main__'` is skipped in most of examples.
+
+Using it makes sense in the production code written and improved in the future by professional programmers. But code here is intended to be used with beginners so complicated concepts with limited use are skipped.
+
+Skipped concepts/techniques may be listed in `SKIPPED.md` file or as a comment in the source code.
+
 # Similar projects
 
 There are some similar projects with materials and ideas on the topic of teaching programming to beginners with interesting miniprojects.
