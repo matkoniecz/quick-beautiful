@@ -48,10 +48,18 @@ def make_hole(draw, x, y, section_size, hole_color):
     is split into 9 squares and sentral one is painted with hole_color
     draw contains ImageDraw object to be drawn on
     """
-    corner = (x + section_size / 3, y + section_size / 3)
-    # -1 necessary due to https://github.com/python-pillow/Pillow/issues/1668
-    opposite_corner = (x + section_size * 2/3 - 1, y + section_size * 2/3 - 1)
-    draw.rectangle((corner, opposite_corner), fill=hole_color)
+    corner = (x + section_size // 3, y + section_size // 3)
+    paint_square(draw, corner, section_size // 3, hole_color)
 
+def paint_square(draw, upper_left_corner, square_size, square_color):
+    """
+    paint square at specified location
+    upper_left_corner is an (x, y) tuple
+    both upper_left_corner and square_size is specified in pixels
+    draw contains ImageDraw object to be drawn on
+    """
+    # -1 necessary due to https://github.com/python-pillow/Pillow/issues/1668
+    opposite_corner = (upper_left_corner[0] + square_size - 1, upper_left_corner[1] + square_size - 1)
+    draw.rectangle((upper_left_corner, opposite_corner), fill=square_color)
 
 main()
