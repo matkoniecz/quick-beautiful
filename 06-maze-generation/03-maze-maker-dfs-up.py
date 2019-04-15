@@ -35,6 +35,10 @@ def children(parent_x, parent_y, pixels, WIDTH, HEIGHT):
 
 
 def inside_image(x, y, WIDTH, HEIGHT):
+    """
+    returns true if (x, y) is inside image of size (WIDTH, HEIGHT),
+    return false otherwise
+    """
     if x < 0:
         return False
     if y < 0:

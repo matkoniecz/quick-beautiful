@@ -89,6 +89,10 @@ def is_populated(x, y, pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
 
 
 def inside_image(x, y, WIDTH, HEIGHT):
+    """
+    returns true if (x, y) is inside image of size (WIDTH, HEIGHT),
+    return false otherwise
+    """
     if x < 0:
         return False
     if y < 0:
