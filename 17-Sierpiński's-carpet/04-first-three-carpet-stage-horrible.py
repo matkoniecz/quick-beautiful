@@ -32,12 +32,22 @@ def main():
 
 
 def save_animated_gif(filename, images, duration):
-    """merges files into a single animated gif and saves it at the specified location"""
+    """
+    Saves a file with animated GIF in location specified by filename parameter.
+    Frames are specified as list of images in the images parameter.
+    durations to display each frame are specified as a list, with milliseconds as the unit,
+    list should have the same length as images list.
+    """
     # done using https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html#saving
     first_image, *other_images = images
     first_image.save(filename, save_all=True, append_images=other_images, duration=duration, loop=0)
 
 def make_hole(draw, x, y, section_size, hole_color):
+    """
+    square with upper left corner in (x, y) and size section size
+    is split into 9 squares and sentral one is painted with hole_color
+    draw contains ImageDraw object to be drawn on
+    """
     corner = (x + section_size / 3, y + section_size / 3)
     # -1 necessary due to https://github.com/python-pillow/Pillow/issues/3597
     opposite_corner = (x + section_size * 2/3 - 1, y + section_size * 2/3 - 1)
