@@ -3,6 +3,7 @@ from PIL import ImageDraw
 
 
 def main():
+    """generates an animated gif of the initial stages of Sierpiński's carpet"""
     FRACTAL_DEPTH = 7
     size = 3**FRACTAL_DEPTH
     carpets = []

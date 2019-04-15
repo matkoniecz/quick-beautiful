@@ -3,6 +3,7 @@ from PIL import ImageDraw
 
 
 def main():
+    """generates an animated gif of the initial stages of Sierpiński's carpet"""
     size = 300
     carpet_without_hole = make_carpet(0, size)
     carpet_with_first_hole = make_carpet(1, size)

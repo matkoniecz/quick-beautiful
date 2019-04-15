@@ -3,6 +3,7 @@ from PIL import Image
 
 
 def main():
+    """generates an animated gif of the initial stages of Sierpiński's carpet"""
     check_version()
     width = 300
     height = 300

@@ -3,6 +3,7 @@ from PIL import ImageDraw
 
 
 def main():
+    """generates an animated gif of the initial stages of Sierpiński's carpet"""
     size = 300
     PURPLE = (150, 0, 150)
     WHITE = (255, 255, 255)
