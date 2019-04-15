@@ -2,13 +2,6 @@ from PIL import Image
 from PIL import ImageDraw
 
 
-def save_animated_gif(filename, images, duration):
-    """merges files into a single animated gif and saves it at the specified location"""
-    # done using https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html#saving
-    first_image = images[0]
-    other_images = images[1:]
-    first_image.save(filename, save_all=True, append_images=other_images, duration=duration, loop=0)
-
 def main():
     size = 300
     PURPLE = (150, 0, 150)
@@ -26,5 +19,12 @@ def main():
 
     animation = [carpet_without_hole, carpet_with_first_hole]
     save_animated_gif("Sierpiński's carpet.gif", animation, 1200)
+
+def save_animated_gif(filename, images, duration):
+    """merges files into a single animated gif and saves it at the specified location"""
+    # done using https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html#saving
+    first_image = images[0]
+    other_images = images[1:]
+    first_image.save(filename, save_all=True, append_images=other_images, duration=duration, loop=0)
 
 main()

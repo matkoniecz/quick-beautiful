@@ -2,6 +2,15 @@ from PIL import Image
 from PIL import ImageDraw
 
 
+def main():
+    size = 300
+    FRACTAL_DEPTH = 3
+    carpets = []
+    for i in range(-1, FRACTAL_DEPTH - 1):
+        carpets.append(make_carpet(i + 1, size))
+
+    save_animated_gif("Sierpiński's carpet.gif", carpets, 1200)
+
 def save_animated_gif(filename, images, duration):
     """merges files into a single animated gif and saves it at the specified location"""
     # done using https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html#saving
@@ -34,14 +43,5 @@ def make_carpet(levels, size):
     draw = ImageDraw.Draw(carpet)
     make_pattern(draw, 0, 0, size, levels, hole_color=WHITE)
     return carpet
-
-def main():
-    size = 300
-    FRACTAL_DEPTH = 3
-    carpets = []
-    for i in range(-1, FRACTAL_DEPTH - 1):
-        carpets.append(make_carpet(i + 1, size))
-
-    save_animated_gif("Sierpiński's carpet.gif", carpets, 1200)
 
 main()

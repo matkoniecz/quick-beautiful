@@ -2,6 +2,15 @@ from PIL import Image
 from PIL import ImageDraw
 
 
+def main():
+    size = 300
+    carpet_without_hole = make_carpet(0, size)
+    carpet_with_first_hole = make_carpet(1, size)
+    third_carpet = make_carpet(2, size)
+
+    animation = [carpet_without_hole, carpet_with_first_hole, third_carpet]
+    save_animated_gif("Sierpiński's carpet.gif", animation, 1200)
+
 def save_animated_gif(filename, images, duration):
     """merges files into a single animated gif and saves it at the specified location"""
     # done using https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html#saving
@@ -36,14 +45,5 @@ def make_carpet(levels, size):
     make_pattern(draw, 0, 0, size, levels, hole_color=WHITE)
     return carpet
 
-
-def main():
-    size = 300
-    carpet_without_hole = make_carpet(0, size)
-    carpet_with_first_hole = make_carpet(1, size)
-    third_carpet = make_carpet(2, size)
-
-    animation = [carpet_without_hole, carpet_with_first_hole, third_carpet]
-    save_animated_gif("Sierpiński's carpet.gif", animation, 1200)
 
 main()
