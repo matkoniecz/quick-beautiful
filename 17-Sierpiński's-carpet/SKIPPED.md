@@ -3,3 +3,4 @@ See "Skipped concepts" in the main readme for explanation why following concepts
  * using `itertools.product()`
  * using generators
  * `if __name__ == '__main__'`
+ * list comprehensions
