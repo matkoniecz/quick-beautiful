@@ -33,16 +33,16 @@ def children(parent_x, parent_y, pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
     returned = []
     if inside_image(up[0], up[1], WIDTH, HEIGHT):
         if pixels[up[0], up[1]] != PASSAGE_COLOR:
-            return [up]
+            returned.append(up)
     if inside_image(left[0], left[1], WIDTH, HEIGHT):
         if pixels[left[0], left[1]] != PASSAGE_COLOR:
-            return [left]
+            returned.append(left)
     if inside_image(down[0], down[1], WIDTH, HEIGHT):
         if pixels[down[0], down[1]] != PASSAGE_COLOR:
-            return [down]
+            returned.append(down)
     if inside_image(right[0], right[1], WIDTH, HEIGHT):
         if pixels[right[0], right[1]] != PASSAGE_COLOR:
-            return [right]
+            returned.append(right)
     return returned
 
 def is_populated(x, y, pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
