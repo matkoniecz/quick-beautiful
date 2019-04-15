@@ -2,6 +2,7 @@ from PIL import Image
 import random
 import time
 
+
 def main():
     WIDTH = 100
     HEIGHT = 100
@@ -12,9 +13,8 @@ def main():
     im = Image.new("RGB", (WIDTH, HEIGHT), WALL_COLOR)
     pixels = im.load()
 
-
     candidates_list = []
-    candidates_list.append((10,10))
+    candidates_list.append((10, 10))
     while len(candidates_list) > 0:
         processed = candidates_list.pop()
         x = processed[0]
@@ -24,6 +24,7 @@ def main():
             candidates_list.append(child)
     im.show()
     im.save("maze.png")
+
 
 def children(parent_x, parent_y, pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
     up = (parent_x, parent_y - 1)
@@ -45,13 +46,15 @@ def children(parent_x, parent_y, pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
             returned.append(right)
     return returned
 
+
 def is_populated(x, y, pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
     """returns true if this locations contains passage, false if wall or is outside image"""
     if not inside_image(x, y, WIDTH, HEIGHT):
         return False
-    if pixels[x, y] ==  PASSAGE_COLOR:
+    if pixels[x, y] == PASSAGE_COLOR:
         return True
     return False
+
 
 def inside_image(x, y, WIDTH, HEIGHT):
     if x < 0:
@@ -63,5 +66,6 @@ def inside_image(x, y, WIDTH, HEIGHT):
     if y >= HEIGHT:
         return False
     return True
+
 
 main()
