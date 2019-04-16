@@ -5,7 +5,7 @@ from PIL import Image
 def main():
     WIDTH = 319
     HEIGHT = 168
-    PIXEL_SIZE = 6
+    TILE_SIZE_IN_PIXELS = 6
     WHITE = (255, 255, 255)
     PASSAGE_COLOR = WHITE
     BLACK = (0, 0, 0)
@@ -24,7 +24,7 @@ def main():
         if len(new_candidates) > 0:
             candidates_list.append(processed)
             candidates_list.append(random.choice(new_candidates))
-    im = im.resize((WIDTH*PIXEL_SIZE, HEIGHT*PIXEL_SIZE))
+    im = im.resize((WIDTH*TILE_SIZE_IN_PIXELS, HEIGHT*TILE_SIZE_IN_PIXELS))
     im.show()
     im.save("maze.png")
 
@@ -64,16 +64,27 @@ def is_safe_to_tunnel(parent_x, parent_y, x, y, pixels, WIDTH, HEIGHT, PASSAGE_C
         return False
     if pixels[x, y] == PASSAGE_COLOR:
         return False
+    if is_colliding_with_other_tunnels(parent_x, parent_y, x, y, pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
+        return False
+    return True
 
-    around_offsets = [(1, 0), (1, -1), (0, -1), (-1, -1),
-                      (-1, 0), (-1, 1), (0, 1), (1, 1)]
-    for offset in around_offsets:
+
+def is_colliding_with_other_tunnels(parent_x, parent_y, x, y, pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
+    """
+    checks whatever tunnel at this legal location can
+    be placed without colliding with other tunnels
+    """
+    for offset in offsets_to_surrounding_tiles():
         if is_populated(x + offset[0], y + offset[1], pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
             x_distance_to_parent = x + offset[0] - parent_x
             y_distance_to_parent = y + offset[1] - parent_y
             if abs(x_distance_to_parent) + abs(y_distance_to_parent) > 1:
-                return False
-    return True
+                return True
+    return False
+
+def offsets_to_surrounding_tiles():
+    return [(1, 0), (1, -1), (0, -1), (-1, -1),
+            (-1, 0), (-1, 1), (0, 1), (1, 1)]
 
 
 def is_populated(x, y, pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
