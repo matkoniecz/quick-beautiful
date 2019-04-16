@@ -1,32 +1,36 @@
+"""
+maze generator
+"""
 import random
 from PIL import Image
 
-
 def main():
-    WIDTH = 319
-    HEIGHT = 168
-    TILE_SIZE_IN_PIXELS = 6
     WHITE = (255, 255, 255)
-    PASSAGE_COLOR = WHITE
     BLACK = (0, 0, 0)
-    WALL_COLOR = BLACK
-    maze = Maze(WIDTH, HEIGHT, passage_color=PASSAGE_COLOR, wall_color=WALL_COLOR, tile_size_in_pixels=TILE_SIZE_IN_PIXELS)
-    maze.generate("maze.png")
+    maze = Maze(width=319, height=168)
+    maze.output_maze("maze.png", passage_color=WHITE, wall_color=BLACK, tile_size_in_pixels=6)
 
 
 class Maze:
-    def __init__(self, width, height, passage_color=(255, 255, 255), wall_color=(0, 0, 0), tile_size_in_pixels=6):
+    """
+    generates maze using DFS based algorithm
+    """
+    def __init__(self, width, height):
         self.WIDTH = width
-        self.HEIGHT = width
-        self.PASSAGE_COLOR = passage_color
-        self.WALL_COLOR = wall_color
-        self.TILE_SIZE_IN_PIXELS = tile_size_in_pixels
+        self.HEIGHT = height
+        self.PASSAGE_COLOR = (255, 255, 255)
+        self.WALL_COLOR = (0, 0, 0)
         self.image = Image.new("RGB", (self.WIDTH, self.HEIGHT), self.WALL_COLOR)
         self.pixels = self.image.load()
+        self.generate()
 
-    def generate(self, image_output_filepath):
+    def generate(self):
+        """
+        expands maze starting from (0, 0) as a seed location,
+        as long as eligible places to carve new tunnels exist
+        """
         candidates_list = []
-        candidates_list.append((10, 10))
+        candidates_list.append((0, 0))
         while len(candidates_list) > 0:
             processed = candidates_list.pop()
             x = processed[0]
@@ -36,14 +40,30 @@ class Maze:
             if len(new_candidates) > 0:
                 candidates_list.append(processed)
                 candidates_list.append(random.choice(new_candidates))
-        self.output_maze(image_output_filepath)
 
-    def output_maze(self, image_output_filepath):
-        self.image = self.image.resize((self.WIDTH*self.TILE_SIZE_IN_PIXELS, self.HEIGHT*self.TILE_SIZE_IN_PIXELS))
-        self.image.show()
-        self.image.save(image_output_filepath)
+    def output_maze(self, image_output_filepath, tile_size_in_pixels=1, passage_color=(255, 255, 255), wall_color=(0, 0, 0)):
+        """
+        shows maze image at the screen and
+        outputs maze to specified location in image_output_filepath
+        using file format implied by extensions
+        """
+        output = Image.new("RGB", (self.WIDTH, self.HEIGHT))
+        output_pixels = output.load()
+        for x in range(self.WIDTH):
+            for y in range(self.HEIGHT):
+                if self.pixels[x, y] == self.PASSAGE_COLOR:
+                    output_pixels[x, y] = passage_color
+                else:
+                    output_pixels[x, y] = wall_color
+        output = output.resize((self.WIDTH*tile_size_in_pixels, self.HEIGHT*tile_size_in_pixels))
+        output.show()
+        output.save(image_output_filepath)
 
     def children(self, parent_x, parent_y):
+        """
+        returns list of all currently eligible locations to expand from (parent_x, parent_y)
+        list contains tuples of integers
+        """
         up = (parent_x, parent_y - 1)
         left = (parent_x - 1, parent_y)
         right = (parent_x + 1, parent_y)

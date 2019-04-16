@@ -12,7 +12,14 @@ def main():
     WALL_COLOR = BLACK
     im = Image.new("RGB", (WIDTH, HEIGHT), WALL_COLOR)
     pixels = im.load()
+    generate(pixels, WIDTH, HEIGHT, PASSAGE_COLOR)
+    output_maze("maze.png", im, WIDTH, HEIGHT, tile_size_in_pixels=TILE_SIZE_IN_PIXELS)
 
+def generate(pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
+    """
+    expands maze starting from (0, 0) as a seed location,
+    as long as eligible places to carve new tunnels exist
+    """
     candidates_list = []
     candidates_list.append((10, 10))
     while len(candidates_list) > 0:
@@ -24,12 +31,22 @@ def main():
         if len(new_candidates) > 0:
             candidates_list.append(processed)
             candidates_list.append(random.choice(new_candidates))
-    im = im.resize((WIDTH*TILE_SIZE_IN_PIXELS, HEIGHT*TILE_SIZE_IN_PIXELS))
-    im.show()
-    im.save("maze.png")
 
+def output_maze(image_output_filepath, image, WIDTH, HEIGHT, tile_size_in_pixels=1):
+    """
+    shows maze image at the screen and
+    outputs maze to specified location in image_output_filepath
+    using file format implied by extensions
+    """
+    image = image.resize((WIDTH*tile_size_in_pixels, HEIGHT*tile_size_in_pixels))
+    image.show()
+    image.save(image_output_filepath)
 
 def children(parent_x, parent_y, pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
+    """
+    returns list of all currently eligible locations to expand from (parent_x, parent_y)
+    list contains tuples of integers
+    """
     up = (parent_x, parent_y - 1)
     left = (parent_x - 1, parent_y)
     right = (parent_x + 1, parent_y)
