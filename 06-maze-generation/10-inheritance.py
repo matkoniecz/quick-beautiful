@@ -117,9 +117,9 @@ class Maze:
         """
         for offset in self.offsets_to_surrounding_tiles():
             if self.is_populated(x + offset[0], y + offset[1]):
-                x_distance_to_parent = x + offset[0] - parent_x
-                y_distance_to_parent = y + offset[1] - parent_y
-                if abs(x_distance_to_parent) + abs(y_distance_to_parent) > 1:
+                x_distance_to_parent = abs(x + offset[0] - parent_x)
+                y_distance_to_parent = abs(y + offset[1] - parent_y)
+                if x_distance_to_parent + y_distance_to_parent > 1:
                     return True
         return False
 
@@ -163,9 +163,9 @@ class MazeWithWideCorridors(Maze):
         """
         for offset in self.offsets_to_surrounding_tiles():
             if self.is_populated(x + offset[0], y + offset[1]):
-                x_distance_to_parent = x + offset[0] - parent_x
-                y_distance_to_parent = y + offset[1] - parent_y
-                if abs(x_distance_to_parent) > 1 or abs(y_distance_to_parent) > 1:
+                x_distance_to_parent = abs(x + offset[0] - parent_x)
+                y_distance_to_parent = abs(y + offset[1] - parent_y)
+                if x_distance_to_parent > 1 or y_distance_to_parent > 1:
                     return True
         return False
 
