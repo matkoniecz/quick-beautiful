@@ -14,6 +14,7 @@ def main():
     generate(pixels, WIDTH, HEIGHT, PASSAGE_COLOR)
     output_maze("maze.png", im, WIDTH, HEIGHT)
 
+
 def generate(pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
     """
     expands maze starting from (0, 0) as a seed location,
@@ -30,6 +31,7 @@ def generate(pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
         if len(new_candidates) > 0:
             candidates_list.append(processed)
             candidates_list.append(random.choice(new_candidates))
+
 
 def output_maze(image_output_filepath, image, WIDTH, HEIGHT):
     """

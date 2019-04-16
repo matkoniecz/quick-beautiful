@@ -13,6 +13,7 @@ def main():
     generate(pixels, WIDTH, HEIGHT, PASSAGE_COLOR)
     output_maze("maze.png", im, WIDTH, HEIGHT)
 
+
 def generate(pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
     """
     expands maze starting from (10, 10) as a seed location,
@@ -27,6 +28,7 @@ def generate(pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
         pixels[x, y] = PASSAGE_COLOR
         for child in children(x, y, pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
             candidates_list.append(child)
+
 
 def output_maze(image_output_filepath, image, WIDTH, HEIGHT):
     """

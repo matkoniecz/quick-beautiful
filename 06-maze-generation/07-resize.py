@@ -32,6 +32,7 @@ def generate(pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
             candidates_list.append(processed)
             candidates_list.append(random.choice(new_candidates))
 
+
 def output_maze(image_output_filepath, image, WIDTH, HEIGHT, tile_size_in_pixels=1):
     """
     shows maze image at the screen and
@@ -41,6 +42,7 @@ def output_maze(image_output_filepath, image, WIDTH, HEIGHT, tile_size_in_pixels
     image = image.resize((WIDTH*tile_size_in_pixels, HEIGHT*tile_size_in_pixels))
     image.show()
     image.save(image_output_filepath)
+
 
 def children(parent_x, parent_y, pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
     """

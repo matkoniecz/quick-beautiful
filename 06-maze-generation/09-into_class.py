@@ -4,6 +4,7 @@ maze generator
 import random
 from PIL import Image
 
+
 def main():
     WIDTH = 319
     HEIGHT = 168
@@ -20,6 +21,7 @@ class Maze:
     """
     generates maze using DFS based algorithm
     """
+
     def __init__(self, width, height):
         self.WIDTH = width
         self.HEIGHT = height

@@ -4,6 +4,7 @@ maze generator
 import random
 from PIL import Image
 
+
 def main():
     WIDTH = 319
     HEIGHT = 168
@@ -22,6 +23,7 @@ class Maze:
     """
     generates maze using DFS based algorithm
     """
+
     def __init__(self, width, height):
         self.WIDTH = width
         self.HEIGHT = height
@@ -152,6 +154,7 @@ class Maze:
             return False
         return True
 
+
 class MazeWithWideCorridors(Maze):
     def is_colliding_with_other_tunnels(self, parent_x, parent_y, x, y):
         """
@@ -165,5 +168,6 @@ class MazeWithWideCorridors(Maze):
                 if abs(x_distance_to_parent) > 1 or abs(y_distance_to_parent) > 1:
                     return True
         return False
+
 
 main()
