@@ -1,6 +1,7 @@
 import random
 from PIL import Image
 
+
 def main():
     WIDTH = 200
     HEIGHT = 200
@@ -78,6 +79,7 @@ def is_colliding_with_other_tunnels(parent_x, parent_y, x, y, pixels, WIDTH, HEI
             if abs(x_distance_to_parent) + abs(y_distance_to_parent) > 1:
                 return True
     return False
+
 
 def offsets_to_surrounding_tiles():
     return [(1, 0), (1, -1), (0, -1), (-1, -1),

@@ -1,6 +1,7 @@
 import random
 from PIL import Image
 
+
 def main():
     WIDTH = 319
     HEIGHT = 168
@@ -11,6 +12,7 @@ def main():
     WALL_COLOR = BLACK
     maze = Maze(WIDTH, HEIGHT, passage_color=PASSAGE_COLOR, wall_color=WALL_COLOR, tile_size_in_pixels=TILE_SIZE_IN_PIXELS)
     maze.generate("maze.png")
+
 
 class Maze:
     def __init__(self, width, height, passage_color=(255, 255, 255), wall_color=(0, 0, 0), tile_size_in_pixels=6):
@@ -35,7 +37,7 @@ class Maze:
                 candidates_list.append(processed)
                 candidates_list.append(random.choice(new_candidates))
         self.output_maze(image_output_filepath)
-    
+
     def output_maze(self, image_output_filepath):
         self.image = self.image.resize((self.WIDTH*self.TILE_SIZE_IN_PIXELS, self.HEIGHT*self.TILE_SIZE_IN_PIXELS))
         self.image.show()
@@ -56,7 +58,6 @@ class Maze:
         if self.is_safe_to_tunnel(parent_x, parent_y, right[0], right[1]):
             returned.append(right)
         return returned
-
 
     def is_safe_to_tunnel(self, parent_x, parent_y, x, y):
         """
@@ -79,7 +80,6 @@ class Maze:
         if self.is_colliding_with_other_tunnels(parent_x, parent_y, x, y):
             return False
         return True
-
 
     def is_colliding_with_other_tunnels(self, parent_x, parent_y, x, y):
         """
@@ -105,7 +105,6 @@ class Maze:
         if self.pixels[x, y] == self.PASSAGE_COLOR:
             return True
         return False
-
 
     def inside_image(self, x, y):
         """

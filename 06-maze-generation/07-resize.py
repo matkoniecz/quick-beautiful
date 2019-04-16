@@ -82,6 +82,7 @@ def is_colliding_with_other_tunnels(parent_x, parent_y, x, y, pixels, WIDTH, HEI
                 return True
     return False
 
+
 def offsets_to_surrounding_tiles():
     return [(1, 0), (1, -1), (0, -1), (-1, -1),
             (-1, 0), (-1, 1), (0, 1), (1, 1)]
