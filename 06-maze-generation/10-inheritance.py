@@ -38,8 +38,7 @@ class Maze:
         expands maze starting from (0, 0) as a seed location,
         as long as eligible places to carve new tunnels exist
         """
-        candidates_list = []
-        candidates_list.append((0, 0))
+        candidates_list = [(0, 0)]
         while len(candidates_list) > 0:
             processed = candidates_list.pop()
             x = processed[0]

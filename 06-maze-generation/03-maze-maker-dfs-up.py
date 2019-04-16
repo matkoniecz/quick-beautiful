@@ -19,8 +19,7 @@ def generate(pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
     expands maze starting from (10, 10) as a seed location,
     as long as eligible places to carve new tunnels exist
     """
-    candidates_list = []
-    candidates_list.append((10, 10))
+    candidates_list = [(10, 10)]
     while len(candidates_list) > 0:
         processed = candidates_list.pop()
         x = processed[0]
