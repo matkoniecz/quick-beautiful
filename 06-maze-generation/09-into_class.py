@@ -34,10 +34,12 @@ class Maze:
             if len(new_candidates) > 0:
                 candidates_list.append(processed)
                 candidates_list.append(random.choice(new_candidates))
+        self.output_maze(image_output_filepath)
+    
+    def output_maze(self, image_output_filepath):
         self.image = self.image.resize((self.WIDTH*self.TILE_SIZE_IN_PIXELS, self.HEIGHT*self.TILE_SIZE_IN_PIXELS))
         self.image.show()
         self.image.save(image_output_filepath)
-
 
     def children(self, parent_x, parent_y):
         up = (parent_x, parent_y - 1)
