@@ -71,6 +71,12 @@ Short texts covered by fair use:
 
 ## Sierpiński's carpet
 
+Maze generation, includes powerful example why classes are useful.
+
+![maze_small.png](maze_small.png)
+
+## Sierpiński's carpet
+
 More complicated case of recursion.
 
 ![Sierpiński's_carpet.gif](Sierpiński's_carpet.gif)
