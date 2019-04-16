@@ -22,8 +22,7 @@ def generate(pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
     candidates_list = [(10, 10)]
     while len(candidates_list) > 0:
         processed = candidates_list.pop()
-        x = processed[0]
-        y = processed[1]
+        x, y = processed
         pixels[x, y] = PASSAGE_COLOR
         for child in children(x, y, pixels, WIDTH, HEIGHT):
             candidates_list.append(child)

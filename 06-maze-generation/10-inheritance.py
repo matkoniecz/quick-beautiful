@@ -41,8 +41,7 @@ class Maze:
         candidates_list = [(0, 0)]
         while len(candidates_list) > 0:
             processed = candidates_list.pop()
-            x = processed[0]
-            y = processed[1]
+            x, y = processed
             self.pixels[x, y] = self.PASSAGE_COLOR
             new_candidates = self.children(x, y)
             if len(new_candidates) > 0:
@@ -115,9 +114,10 @@ class Maze:
         be placed without colliding with other tunnels
         """
         for offset in self.offsets_to_surrounding_tiles():
-            if self.is_populated(x + offset[0], y + offset[1]):
-                x_distance_to_parent = abs(x + offset[0] - parent_x)
-                y_distance_to_parent = abs(y + offset[1] - parent_y)
+            offset_x, offset_y = offset
+            if self.is_populated(x + offset_x, y + offset_y):
+                x_distance_to_parent = abs(x + offset_x - parent_x)
+                y_distance_to_parent = abs(y + offset_y - parent_y)
                 if x_distance_to_parent + y_distance_to_parent > 1:
                     return True
         return False

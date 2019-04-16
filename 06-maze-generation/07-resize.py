@@ -23,8 +23,7 @@ def generate(pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
     candidates_list = [(0, 0)]
     while len(candidates_list) > 0:
         processed = candidates_list.pop()
-        x = processed[0]
-        y = processed[1]
+        x, y = processed
         pixels[x, y] = PASSAGE_COLOR
         new_candidates = children(x, y, pixels, WIDTH, HEIGHT, PASSAGE_COLOR)
         if len(new_candidates) > 0:
@@ -93,10 +92,11 @@ def is_colliding_with_other_tunnels(parent_x, parent_y, x, y, pixels, WIDTH, HEI
     be placed without colliding with other tunnels
     """
     for offset in offsets_to_surrounding_tiles():
-        if is_populated(x + offset[0], y + offset[1], pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
-            x_distance_to_parent = x + offset[0] - parent_x
-            y_distance_to_parent = y + offset[1] - parent_y
-            if abs(x_distance_to_parent) + abs(y_distance_to_parent) > 1:
+        offset_x, offset_y = offset
+        if is_populated(x + offset_x, y + offset_y, pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
+            x_distance_to_parent = abs(x + offset_x - parent_x)
+            y_distance_to_parent = abs(y + offset_y - parent_y)
+            if x_distance_to_parent + y_distance_to_parent > 1:
                 return True
     return False
 
