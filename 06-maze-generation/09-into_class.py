@@ -115,6 +115,10 @@ class Maze:
         return False
 
     def offsets_to_surrounding_tiles(self):
+        """
+        returns list of 2-tuples with distances to
+        each of 8 neighbouring tiles
+        """
         return [(1, 0), (1, -1), (0, -1), (-1, -1),
                 (-1, 0), (-1, 1), (0, 1), (1, 1)]
 

@@ -100,6 +100,10 @@ def is_colliding_with_other_tunnels(parent_x, parent_y, x, y, pixels, WIDTH, HEI
 
 
 def offsets_to_surrounding_tiles():
+    """
+    returns list of 2-tuples with distances to
+    each of 8 neighbouring tiles
+    """
     return [(1, 0), (1, -1), (0, -1), (-1, -1),
             (-1, 0), (-1, 1), (0, 1), (1, 1)]
 
