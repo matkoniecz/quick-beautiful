@@ -14,6 +14,8 @@ def main():
     WALL_COLOR = BLACK
     maze = Maze(width=WIDTH, height=HEIGHT)
     maze.output_maze("maze.png", passage_color=PASSAGE_COLOR, wall_color=WALL_COLOR, tile_size_in_pixels=TILE_SIZE_PX)
+    maze = MazeWithWideCorridors(width=WIDTH, height=HEIGHT)
+    maze.output_maze("maze_alternative.png", passage_color=PASSAGE_COLOR, wall_color=WALL_COLOR, tile_size_in_pixels=TILE_SIZE_PX)
 
 
 class Maze:
@@ -150,5 +152,18 @@ class Maze:
             return False
         return True
 
+class MazeWithWideCorridors(Maze):
+    def is_colliding_with_other_tunnels(self, parent_x, parent_y, x, y):
+        """
+        checks whatever tunnel at this legal location can
+        be placed without colliding with other tunnels
+        """
+        for offset in self.offsets_to_surrounding_tiles():
+            if self.is_populated(x + offset[0], y + offset[1]):
+                x_distance_to_parent = x + offset[0] - parent_x
+                y_distance_to_parent = y + offset[1] - parent_y
+                if abs(x_distance_to_parent) > 1 or abs(y_distance_to_parent) > 1:
+                    return True
+        return False
 
 main()

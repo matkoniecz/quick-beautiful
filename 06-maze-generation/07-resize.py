@@ -5,7 +5,7 @@ from PIL import Image
 def main():
     WIDTH = 319
     HEIGHT = 168
-    TILE_SIZE_IN_PIXELS = 6
+    TILE_SIZE_PX = 6
     WHITE = (255, 255, 255)
     PASSAGE_COLOR = WHITE
     BLACK = (0, 0, 0)
@@ -13,7 +13,7 @@ def main():
     im = Image.new("RGB", (WIDTH, HEIGHT), WALL_COLOR)
     pixels = im.load()
     generate(pixels, WIDTH, HEIGHT, PASSAGE_COLOR)
-    output_maze("maze.png", im, WIDTH, HEIGHT, tile_size_in_pixels=TILE_SIZE_IN_PIXELS)
+    output_maze("maze.png", im, WIDTH, HEIGHT, tile_size_in_pixels=TILE_SIZE_PX)
 
 def generate(pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
     """
