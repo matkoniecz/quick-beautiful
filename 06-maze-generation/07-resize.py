@@ -51,7 +51,7 @@ def is_safe_to_tunnel(parent_x, parent_y, x, y, pixels, WIDTH, HEIGHT, PASSAGE_C
     """
     returns true if location (x, y) can be turned into a passage
     false otherwise
-    
+
     protects agains going outside image or making
     loop or passage wider than 1 tile
 
@@ -66,7 +66,8 @@ def is_safe_to_tunnel(parent_x, parent_y, x, y, pixels, WIDTH, HEIGHT, PASSAGE_C
     if pixels[x, y] == PASSAGE_COLOR:
         return False
 
-    around_offsets = [(1, 0), (1, -1), (0, -1), (-1, -1), (-1, 0), (-1, 1), (0, 1), (1, 1)]
+    around_offsets = [(1, 0), (1, -1), (0, -1), (-1, -1),
+                      (-1, 0), (-1, 1), (0, 1), (1, 1)]
     for offset in around_offsets:
         if is_populated(x + offset[0], y + offset[1], pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
             x_distance_to_parent = x + offset[0] - parent_x
