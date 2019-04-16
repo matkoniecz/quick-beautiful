@@ -1,6 +1,4 @@
 from PIL import Image
-import random
-import time
 
 
 def main():

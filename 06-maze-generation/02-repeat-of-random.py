@@ -1,5 +1,5 @@
-from PIL import Image
 import random
+from PIL import Image
 
 WIDTH = 200
 HEIGHT = 200
