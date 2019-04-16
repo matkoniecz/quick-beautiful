@@ -34,48 +34,43 @@ def children(parent_x, parent_y, pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
     right = (parent_x + 1, parent_y)
     down = (parent_x, parent_y + 1)
     returned = []
-    if inside_image(up[0], up[1], WIDTH, HEIGHT):
-        if pixels[up[0], up[1]] != PASSAGE_COLOR:
-            if is_safe_to_tunnel(parent_x, parent_y, up[0], up[1], pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
-                returned.append(up)
-    if inside_image(left[0], left[1], WIDTH, HEIGHT):
-        if pixels[left[0], left[1]] != PASSAGE_COLOR:
-            if is_safe_to_tunnel(parent_x, parent_y, left[0], left[1], pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
-                returned.append(left)
-    if inside_image(down[0], down[1], WIDTH, HEIGHT):
-        if pixels[down[0], down[1]] != PASSAGE_COLOR:
-            if is_safe_to_tunnel(parent_x, parent_y, down[0], down[1], pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
-                returned.append(down)
-    if inside_image(right[0], right[1], WIDTH, HEIGHT):
-        if pixels[right[0], right[1]] != PASSAGE_COLOR:
-            if is_safe_to_tunnel(parent_x, parent_y, right[0], right[1], pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
-                returned.append(right)
+    if is_safe_to_tunnel(parent_x, parent_y, up[0], up[1], pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
+        returned.append(up)
+    if is_safe_to_tunnel(parent_x, parent_y, left[0], left[1], pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
+        returned.append(left)
+    if is_safe_to_tunnel(parent_x, parent_y, down[0], down[1], pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
+        returned.append(down)
+    if is_safe_to_tunnel(parent_x, parent_y, right[0], right[1], pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
+        returned.append(right)
     return returned
 
 
 def is_safe_to_tunnel(parent_x, parent_y, x, y, pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
-    delta_x = x - parent_x
-    delta_y = y - parent_y
-    forward_x = x + delta_x
-    forward_y = y + delta_y
-    if is_populated(forward_x, forward_y, pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
+    """
+    returns true if location (x, y) can be turned into a passage
+    false otherwise
+    
+    protects agains going outside image or making
+    loop or passage wider than 1 tile
+
+    returns false if (x, y) is not inside the image
+    returns false if (x, y) is already a passage
+    returns false if there are passages around (x, y) that are
+    not on (parent_x, parent_y) location or around it
+    returns true if location (x, y) can be turned into a passage
+    """
+    if not inside_image(x, y, WIDTH, HEIGHT):
         return False
-    side_x = x + delta_y
-    side_y = y + delta_x
-    if is_populated(side_x, side_y, pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
+    if pixels[x, y] == PASSAGE_COLOR:
         return False
-    side_x = x - delta_y
-    side_y = y - delta_x
-    if is_populated(side_x, side_y, pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
-        return False
-    corner_x = x + delta_y + delta_x
-    corner_y = y + delta_x + delta_y
-    if is_populated(corner_x, corner_y, pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
-        return False
-    corner_x = x - delta_y + delta_x
-    corner_y = y - delta_x + delta_y
-    if is_populated(corner_x, corner_y, pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
-        return False
+
+    around_offsets = [(1, 0), (1, -1), (0, -1), (-1, -1), (-1, 0), (-1, 1), (0, 1), (1, 1)]
+    for offset in around_offsets:
+        if is_populated(x + offset[0], y + offset[1], pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
+            x_distance_to_parent = x + offset[0] - parent_x
+            y_distance_to_parent = y + offset[1] - parent_y
+            if abs(x_distance_to_parent) + abs(y_distance_to_parent) > 1:
+                return False
     return True
 
 
