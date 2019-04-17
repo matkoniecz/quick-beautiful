@@ -1,5 +1,16 @@
 import random
 
+def main():
+    selected_type = random.choice(construction_types())
+    selected_adjective = random.choice(construction_adjectives())
+    selected_adjective = select_variant(selected_type, selected_adjective)
+    construction_year = str(random.randint(1, 1800))
+
+    pointer = select_variant(selected_type, {"feminine": "ta", "masculine": "ten"})
+    change = select_variant(selected_type, {"feminine": "została", "masculine": "został"})
+    construction = select_variant(selected_type, {"feminine": "zbudowana", "masculine": "zbudowany"})
+    print(pointer.capitalize(), selected_adjective, selected_type, change, construction, "w roku", construction_year+".")
+
 def is_feminine_word(word):
     return word[-1] == "a"
 
@@ -24,15 +35,5 @@ def construction_adjectives():
 def construction_types():
     return ["zamek", "fort", "gród", "forteca", "strażnica"]
 
-def main():
-    selected_type = random.choice(construction_types())
-    selected_adjective = random.choice(construction_adjectives())
-    selected_adjective = select_variant(selected_type, selected_adjective)
-    construction_year = str(random.randint(1, 1800))
-
-    pointer = select_variant(selected_type, {"feminine": "ta", "masculine": "ten"})
-    change = select_variant(selected_type, {"feminine": "została", "masculine": "został"})
-    construction = select_variant(selected_type, {"feminine": "zbudowana", "masculine": "zbudowany"})
-    print(pointer.capitalize(), selected_adjective, selected_type, change, construction, "w roku", construction_year+".")
-    
+  
 main()
