@@ -1,5 +1,6 @@
 import random
 
+
 def main():
     selected_type = random.choice(construction_types())
     selected_adjective = random.choice(construction_adjectives())
@@ -14,11 +15,13 @@ def main():
 def is_feminine_word(word):
     return word[-1] == "a"
 
+
 def select_variant(control_word, word_with_variants):
     if is_feminine_word(control_word):
         return word_with_variants["feminine"]
     else:
         return word_with_variants["masculine"]
+
 
 def construction_adjectives():
     return [
@@ -32,8 +35,9 @@ def construction_adjectives():
         {"feminine": "wapienna", "masculine": "wapienny"},
     ]
 
+
 def construction_types():
     return ["zamek", "fort", "gród", "forteca", "strażnica"]
 
-  
+
 main()

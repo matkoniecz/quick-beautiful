@@ -1,5 +1,6 @@
 import random
 
+
 def main():
     selected_adjective = random.choice(construction_adjectives())
     selected_type = random.choice(construction_types())
@@ -9,7 +10,9 @@ def main():
 def construction_adjectives():
     return ["sławny", "wspaniały", "sławny", "zarośnięty", "zniszczony", "drogi", "wapienny"]
 
+
 def construction_types():
     return ["zamek", "fort", "gród"]
+
 
 main()
