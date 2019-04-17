@@ -24,15 +24,23 @@ def construction_adjectives():
 def construction_types():
     return ["zamek", "fort", "gród", "forteca", "strażnica"]
 
+def leader_names():
+    return ["Eufemia", "Jadwiga", "Marianna", "Kunegunda",
+    "Piotr", "Bolesław", "Kazimierz", "Arnulf"]
+
 def main():
     selected_type = random.choice(construction_types())
     selected_adjective = random.choice(construction_adjectives())
     selected_adjective = select_variant(selected_type, selected_adjective)
+    selected_leader = random.choice(leader_names())
     construction_year = str(random.randint(1, 1800))
 
+    ruling = select_variant(selected_leader, {"feminine": "Rządziła", "masculine": "Rządził"})
     pointer = select_variant(selected_type, {"feminine": "ta", "masculine": "ten"})
     change = select_variant(selected_type, {"feminine": "została", "masculine": "został"})
     construction = select_variant(selected_type, {"feminine": "zbudowana", "masculine": "zbudowany"})
     print(pointer.capitalize(), selected_adjective, selected_type, change, construction, "w roku", construction_year+".")
+    print(ruling, "wtedy", selected_leader+".")
     
 main()
+ 
