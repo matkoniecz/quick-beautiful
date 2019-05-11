@@ -13,7 +13,12 @@ def main():
     im = Image.new("RGB", (WIDTH, HEIGHT), WALL_COLOR)
     pixels = im.load()
     generate(pixels, WIDTH, HEIGHT, PASSAGE_COLOR)
-    output_maze("maze.png", im, WIDTH, HEIGHT, tile_size_in_pixels=TILE_SIZE_PX)
+    output_maze("maze.png",
+                im,
+                WIDTH,
+                HEIGHT,
+                tile_size_in_pixels=TILE_SIZE_PX)
+
 
 def generate(pixels, WIDTH, HEIGHT, PASSAGE_COLOR):
     """
@@ -37,7 +42,9 @@ def output_maze(image_output_filepath, image, WIDTH, HEIGHT, tile_size_in_pixels
     outputs maze to specified location in image_output_filepath
     using file format implied by extensions
     """
-    image = image.resize((WIDTH*tile_size_in_pixels, HEIGHT*tile_size_in_pixels))
+    width_in_pixels = WIDTH*tile_size_in_pixels
+    height_in_pixels = HEIGHT*tile_size_in_pixels
+    output = output.resize((width_in_pixels, height_in_pixels))
     image.show()
     image.save(image_output_filepath)
 

@@ -14,7 +14,10 @@ def main():
     BLACK = (0, 0, 0)
     WALL_COLOR = BLACK
     maze = Maze(width=WIDTH, height=HEIGHT)
-    maze.output_maze("maze.png", passage_color=PASSAGE_COLOR, wall_color=WALL_COLOR, tile_size_in_pixels=TILE_SIZE_PX)
+    maze.output_maze("maze.png",
+                     passage_color=PASSAGE_COLOR,
+                     wall_color=WALL_COLOR,
+                     tile_size_in_pixels=TILE_SIZE_PX)
 
 
 class Maze:
@@ -60,7 +63,9 @@ class Maze:
                     output_pixels[x, y] = passage_color
                 else:
                     output_pixels[x, y] = wall_color
-        output = output.resize((self.WIDTH*tile_size_in_pixels, self.HEIGHT*tile_size_in_pixels))
+        width_in_pixels = self.WIDTH*tile_size_in_pixels
+        height_in_pixels = self.HEIGHT*tile_size_in_pixels
+        output = output.resize((width_in_pixels, height_in_pixels))
         output.show()
         output.save(image_output_filepath)
 
