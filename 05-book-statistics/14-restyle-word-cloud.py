@@ -19,24 +19,30 @@ def main():
     base.paste(word_cloud, (x_anchor, y_anchor))
     base.show()
 
+
 def background_color():
     return (255, 255, 255)
+
 
 def text_color():
     return (28, 28, 28)
 
+
 def result_image_size():
     return (800, 300)
+
 
 def word_cloud_size():
     return (int(result_image_size()[0]*2/3), int(result_image_size()[1]*0.9))
 
+
 def font_filepath():
     return "SpaceGrotesk-SemiBold.otf"
 
+
 def word_to_color(word, **kwargs):
     return text_color()
-    
+
 
 def make_word_cloud(book_file_filepath, output_filepath):
     with open(book_file_filepath, 'r', encoding='utf-8') as book_file:
@@ -50,9 +56,9 @@ def make_word_cloud(book_file_filepath, output_filepath):
             background_color=background_color(),
             repeat=False,
             font_path=font_filepath(),
-            width = word_cloud_size()[0],
-            height = word_cloud_size()[1],
-            )
+            width=word_cloud_size()[0],
+            height=word_cloud_size()[1],
+        )
         wordloud = wordcloud.generate_from_frequencies(word_frequencies)
         wordcloud.recolor(color_func=word_to_color)
 

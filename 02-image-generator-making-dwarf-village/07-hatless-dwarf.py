@@ -17,6 +17,7 @@ BACKGROUND = (110, 200, 110)
 def main():
     landscape(WIDTH, HEIGHT, FIGURE_HEIGHT)
 
+
 def landscape(width, height, figure_height):
     im = Image.new("RGB", (width, height), BACKGROUND)
 
@@ -32,6 +33,7 @@ def landscape(width, height, figure_height):
 
     im.save("dwarves.png")
     im.show()
+
 
 def dwarf(draw, leftmost_x, bottom_y, figure_height):
     head_to_body_ratio = 0.2
@@ -65,5 +67,6 @@ def body(draw, leftmost_x, bottom_y, body_height, body_width):
     bottom_left_corner = (leftmost_x, bottom_y)
     top_right_corner = (leftmost_x + body_width, bottom_y - body_height)
     draw.rectangle((bottom_left_corner, top_right_corner), fill=DWARF_CLOTHES)
+
 
 main()

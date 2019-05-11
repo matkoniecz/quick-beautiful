@@ -18,6 +18,7 @@ def landscape():
     dwarf()
     dwarf()
 
+
 def dwarf():
     """draw dwarf"""
     print()
@@ -26,16 +27,20 @@ def dwarf():
     face()
     beard()
 
+
 def beard():
     """draw beard of a dwarf"""
     print("draw dwarf beard - gray triangle")
+
 
 def face():
     """draw face of a dwarf"""
     print("draw dwarf face - pink circle")
 
+
 def body():
     """draw body of a dwarf"""
     print("draw dwarf body - red rectangle")
+
 
 landscape()

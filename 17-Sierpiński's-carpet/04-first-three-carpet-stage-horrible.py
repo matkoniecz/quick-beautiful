@@ -51,6 +51,7 @@ def make_hole(draw, x, y, section_size, hole_color):
     corner = (x + section_size // 3, y + section_size // 3)
     paint_square(draw, corner, section_size // 3, hole_color)
 
+
 def paint_square(draw, upper_left_corner, square_size, square_color):
     """
     paint square at specified location
@@ -61,5 +62,6 @@ def paint_square(draw, upper_left_corner, square_size, square_color):
     # -1 necessary due to https://github.com/python-pillow/Pillow/issues/1668
     opposite_corner = (upper_left_corner[0] + square_size - 1, upper_left_corner[1] + square_size - 1)
     draw.rectangle((upper_left_corner, opposite_corner), fill=square_color)
+
 
 main()

@@ -31,7 +31,6 @@ def paint_square(draw, upper_left_corner, square_size, square_color):
     draw.rectangle((upper_left_corner, opposite_corner), fill=square_color)
 
 
-
 def save_animated_gif(filename, images, duration):
     """
     Saves a file with animated GIF in location specified by filename parameter.

@@ -48,6 +48,7 @@ def paint_square(draw, upper_left_corner, square_size, square_color):
     opposite_corner = (upper_left_corner[0] + square_size - 1, upper_left_corner[1] + square_size - 1)
     draw.rectangle((upper_left_corner, opposite_corner), fill=square_color)
 
+
 def make_carpet(levels, size):
     DARK_GREEN = (5, 60, 20)
     LIGHT_GREEN = (5, 205, 65)
