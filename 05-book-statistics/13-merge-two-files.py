@@ -76,7 +76,7 @@ def text_words(text):
     return text.lower().split()
 
 
-def generate_image_with_text(text_lines, output_filepah):
+def generate_image_with_text(text_lines, output_filepath):
     width = 800
     height = 300
     WHITE = (255, 255, 255)
@@ -95,7 +95,7 @@ def generate_image_with_text(text_lines, output_filepah):
         )
         y_line_anchor += 18
 
-    im.save(output_filepah)
+    im.save(output_filepath)
 
 
 main()

@@ -119,7 +119,7 @@ def text_words(text):
     return text.lower().split()
 
 
-def generate_image_with_text(text_lines, output_filepah):
+def generate_image_with_text(text_lines, output_filepath):
     im = Image.new("RGB", result_image_size(), background_color())
     y_line_anchor = 10
     font = ImageFont.truetype(font_filepath(), 14)
@@ -134,7 +134,7 @@ def generate_image_with_text(text_lines, output_filepah):
         )
         y_line_anchor += 18
 
-    im.save(output_filepah)
+    im.save(output_filepath)
 
 
 main()
