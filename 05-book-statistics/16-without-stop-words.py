@@ -17,6 +17,7 @@ def main():
     x_anchor = result_image_size()[0]-word_cloud_size()[0]
     y_anchor = int((result_image_size()[1]-word_cloud_size()[1])/2)
     base.paste(word_cloud, (x_anchor, y_anchor))
+    base.save('output.png')
     base.show()
 
 
