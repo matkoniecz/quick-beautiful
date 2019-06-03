@@ -103,10 +103,10 @@ def load_text_and_describe_it(filepath):
         returned.append("ilość stron: " + str(len(book_text)//1800+1))
         unique_words = set(words)
         returned.append("ilość różnych słów: " + str(len(unique_words)))
-        returned.append(word_distribution_stats(words))
+        returned.append(word_length_distribution_stats(words))
     return returned
 
-def word_distribution_stats(words):
+def word_length_distribution_stats(words):
     lengths = {}
     for word in words:
         if len(word) in lengths:
