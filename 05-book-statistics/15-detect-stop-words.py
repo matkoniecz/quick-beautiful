@@ -3,7 +3,7 @@ import os
 
 
 def filepath_of_file(file_name):
-    return os.path.join('texts_for_processing', file_name)
+    return os.path.join('..', 'texts_for_processing', file_name)
 
 
 def top_words_in_file(text_filename, n=50):

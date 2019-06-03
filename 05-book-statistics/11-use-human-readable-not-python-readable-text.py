@@ -7,7 +7,7 @@ import os
 
 
 def main():
-    filepath = os.path.join('texts_for_processing', 'Ania z Wyspy, Lucy Maud Montgomery, przełożył Andrzej Magórski.txt')
+    filepath = os.path.join('..', 'texts_for_processing', 'Ania z Wyspy, Lucy Maud Montgomery, przełożył Andrzej Magórski.txt')
     statistics = load_text_and_describe_it(filepath)
     generate_image_with_text(['Ania z Wyspy', ''] + statistics)
 
