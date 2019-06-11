@@ -35,14 +35,14 @@ class World:
 
 def main():
     pygame.init()
-    world = World((100, 10))
     while True:
+        world = World((100, 10))
         for event in pygame.event.get():
             if event.type == QUIT:
                 pygame.quit()
                 sys.exit()
-        time.sleep(0.01)
         world.show_world_state()
+        time.sleep(0.5)
 
 
 main()
