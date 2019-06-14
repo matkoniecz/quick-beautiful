@@ -84,8 +84,7 @@ class World:
 def main():
     pygame.init()
     world = World((50, 50))
-    for i in range(0, 5000):
-        print(i)
+    while True:
         for event in pygame.event.get():
             if event.type == QUIT:
                 pygame.quit()

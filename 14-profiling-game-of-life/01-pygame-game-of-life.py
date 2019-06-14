@@ -19,21 +19,14 @@ class World:
     
     def neighbor_count(self, x, y, x_size, y_size):
         count = 0
-        neighbors = [
-            {"x": -1, "y": -1},
-            {"x": -1, "y": 0},
-            {"x": -1, "y": 1},
-            {"x": 0, "y": -1},
-            {"x": 0, "y": 1},
-            {"x": 1, "y": -1},
-            {"x": 1, "y": 0},
-            {"x": 1, "y": 1},
-        ]
-        for delta in neighbors:
-            checked_x = (x + delta["x"] + x_size) % x_size
-            checked_y = (y + delta["y"] + y_size) % y_size
-            if self.world[checked_x][checked_y] == 1:
-                count += 1
+        for delta_x in [-1, 0, 1]:
+            for delta_y in [-1, 0, 1]:
+                if delta_x == 0 and delta_y == 0:
+                    continue
+                checked_x = (x + delta_x + x_size) % x_size
+                checked_y = (y + delta_y + y_size) % y_size
+                if self.world[checked_x][checked_y] == 1:
+                    count += 1
         return count
 
     def evolve(self):
@@ -86,8 +79,7 @@ class World:
 def main():
     pygame.init()
     world = World((50, 50))
-    for i in range(0, 5000):
-        print(i)
+    while True:
         for event in pygame.event.get():
             if event.type == QUIT:
                 pygame.quit()
