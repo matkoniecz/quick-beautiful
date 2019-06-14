@@ -10,8 +10,8 @@ class World:
         self.world = []
         self.background = (240, 240, 240)
         self.cell_size = 10
-        self.display = pygame.display.set_mode(
-            (size[0] * self.cell_size, size[1] * self.cell_size), 0, 32)
+        windows_size = (size[0] * self.cell_size, size[1] * self.cell_size)
+        self.display = pygame.display.set_mode(windows_size, 0, 32)
         for x in range(size[0]):
             self.world.append([])
             for y in range(size[1]):
@@ -54,8 +54,11 @@ class World:
                     color = BLUE
                 else:
                     color = RED
-                pygame.draw.rect(self.display, color, (x * self.cell_size,
-                                                       y * self.cell_size, self.cell_size, self.cell_size))
+                size = self.cell_size
+                pixel_x = x * size
+                pixel_y = y * size
+                pygame.draw.rect(self.display, color, (pixel_x, pixel_y, size, size))
+
         pygame.display.update()
 
 
