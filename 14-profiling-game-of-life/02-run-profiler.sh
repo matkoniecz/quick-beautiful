@@ -6,3 +6,4 @@ vprof has bad performance and some interface issues like https://github.com/nvdv
 pyflame is harder to setup and run and I see no benefits over py-spy
 tuna can be run once - https://github.com/nschloe/tuna/issues/44
 snakeviz shows blatantly wrong statistics - https://github.com/jiffyclub/snakeviz/issues/112
+note also poor man's sampling profiler - https://stackoverflow.com/questions/375913/how-can-i-profile-c-code-running-on-linux/378024#378024

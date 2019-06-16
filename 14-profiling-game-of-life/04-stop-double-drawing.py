@@ -83,7 +83,7 @@ class World:
 
 def main():
     pygame.init()
-    world = World((50, 50))
+    world = World((150, 150))
     while True:
         for event in pygame.event.get():
             if event.type == QUIT:
