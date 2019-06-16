@@ -115,7 +115,7 @@ def word_length_distribution_stats(words):
             lengths[len(word)] = 1
     returned = ""
     for key in sorted(lengths.keys()):
-        returned += (str(key) + " liter: " + str(int(lengths[key]*100/len(words))) + " %\n")
+        returned += str(key) + " liter: " + str(int(lengths[key]*100/len(words))) + " %\n"
     return returned
 
 def frequency_list_as_list_of_lines(word_frequencies):
