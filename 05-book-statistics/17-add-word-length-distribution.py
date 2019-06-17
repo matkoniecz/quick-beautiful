@@ -106,6 +106,7 @@ def load_text_and_describe_it(filepath):
         returned.append(word_length_distribution_stats(words))
     return returned
 
+
 def word_length_distribution_stats(words):
     lengths = {}
     for word in words:
@@ -117,6 +118,7 @@ def word_length_distribution_stats(words):
     for key in sorted(lengths.keys()):
         returned += str(key) + " liter: " + str(int(lengths[key]*100/len(words))) + " %\n"
     return returned
+
 
 def frequency_list_as_list_of_lines(word_frequencies):
     returned = []

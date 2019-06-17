@@ -16,7 +16,7 @@ class World:
             self.world.append([])
             for y in range(size[1]):
                 self.world[x].append(random.randint(0, 1))
-    
+
     def neighbor_count(self, x, y, x_size, y_size):
         count = 0
         neighbors = [
@@ -61,9 +61,7 @@ class World:
                 elif count == 3:
                     new_world[x][y] = 1
 
-
         self.world = new_world
-
 
     def show_world_state(self):
         self.display.fill(self.background)

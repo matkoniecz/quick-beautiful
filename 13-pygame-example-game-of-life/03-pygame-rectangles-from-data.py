@@ -31,7 +31,8 @@ class World:
                 size = self.cell_size
                 pixel_x = x * size
                 pixel_y = y * size
-                pygame.draw.rect(self.display, color, (pixel_x, pixel_y, size, size))
+                pygame.draw.rect(self.display, color,
+                                 (pixel_x, pixel_y, size, size))
 
         pygame.display.update()
 

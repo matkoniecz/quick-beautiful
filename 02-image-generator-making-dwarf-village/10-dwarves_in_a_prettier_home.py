@@ -67,8 +67,10 @@ def house(draw, lower_left_house_anchor, house_size):
     house_door(draw, lower_left_house_anchor, door_size)
 
     roof_overhang_size = house_width // 7
-    lower_left_roof_anchor = (left_house_wall_x - roof_overhang_size, house_base_y - wall_height)
-    horizontal_roof_size = house_width  + 2 * roof_overhang_size
+    x_anchor = left_house_wall_x - roof_overhang_size
+    y_anchor = house_base_y - wall_height
+    lower_left_roof_anchor = (x_anchor, y_anchor)
+    horizontal_roof_size = house_width + 2 * roof_overhang_size
     vertical_roof_size = house_height - wall_height
     roof_size = (horizontal_roof_size, vertical_roof_size)
     house_roof(draw, lower_left_roof_anchor, roof_size)

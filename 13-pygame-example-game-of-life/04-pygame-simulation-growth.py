@@ -19,7 +19,7 @@ class World:
         x = random.randint(0, size[0])
         y = random.randint(0, size[1])
         self.world[x][y] = 1
-    
+
     def evolve(self):
         x_size = len(self.world)
         y_size = len(self.world[0])
@@ -39,9 +39,8 @@ class World:
                         checked_y = (y + delta_y + y_size) % y_size
                         if self.world[checked_x][checked_y] == 1:
                             new_world[x][y] = 1
-        
-        self.world = new_world
 
+        self.world = new_world
 
     def show_world_state(self):
         self.display.fill(self.background)
