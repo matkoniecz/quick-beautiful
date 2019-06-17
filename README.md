@@ -11,6 +11,8 @@ shown to friend/mother/brother/daughter and will impress them.
 
 Code in this repository is a mix of material already used and tested, ideas for a future, work in progress and notes.
 
+Note that materials presented here are only part of what I am using. Programs are likely to be more useful as inspiration than in a direct use.
+
 ![mandelbrot_-_zoomed.png](mandelbrot_-_zoomed.png)
 
 # Exercises
