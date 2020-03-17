@@ -6,8 +6,10 @@ import collections
 import functools
 
 def main():
-    plt.rcParams["figure.figsize"] = [8, 8]
-    plt.rcParams["figure.dpi"] = 60
+    plt.rcParams["figure.figsize"] = [8, 11]
+    #plt.rcParams["figure.dpi"] = 60
+    plt.rcParams["figure.autolayout"] = True # https://stackoverflow.com/questions/6774086/why-is-my-xlabel-cut-off-in-my-matplotlib-plot
+    
     plt.style.use('fivethirtyeight')
     plt.grid(True)
     resolution = 0.1
