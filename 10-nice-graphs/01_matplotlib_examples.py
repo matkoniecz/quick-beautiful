@@ -5,15 +5,21 @@ import sys
 import collections
 import functools
 
-plt.rcParams["figure.figsize"] = [10, 10]
-plt.style.use('fivethirtyeight')
-plt.grid(True)
+def main():
+    plt.rcParams["figure.figsize"] = [10, 10]
+    plt.style.use('fivethirtyeight')
+    plt.grid(True)
+    make_graph()
+    make_bargraph()
+    make_bargraph_with_merged_bars()
 
-plt.clf()
-plt.hist([1, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1,
-          1, 2, 3, 4, 5, 6, 1, 0, 10], bins=11)
-plt.savefig("TEST.png")
-plt.show()
+
+def make_bargraph_with_merged_bars():
+    plt.clf()
+    plt.hist([1, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1,
+            1, 2, 3, 4, 5, 6, 1, 0, 10], bins=11)
+    plt.savefig("bargraph_with_merged_bars.png")
+    plt.show()
 
 
 def make_graph():
@@ -25,7 +31,7 @@ def make_graph():
     plt.title("Plot the estimate and real data, note drastic difference.")
     plt.plot(D, [120*d+790 for d in D], 'r-')
     plt.plot(D, A, 'kD')
-    plt.savefig('test.png')
+    plt.savefig('line_and_points.png')
     plt.show()
 
 
@@ -38,9 +44,8 @@ def make_bargraph():
     plt.xticks(y_pos, objects)
     plt.ylabel('Value')
     plt.title('Useless bar graph')
-    plt.savefig('test_bar.png')
+    plt.savefig('bargraph.png')
     plt.show()
 
 
-make_graph()
-make_bargraph()
+main()
