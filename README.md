@@ -93,6 +93,16 @@ Materials showing interesting cases where programming is necessary:
 
 * [7 Minutes of Terror: Curiosity Rover's Risky Mars Landing](https://www.youtube.com/watch?v=h2I8AoB1xgU) (bonus: [landing video](https://www.youtube.com/watch?v=svUJdzMHwmM) + [Curiosity rover descending on a parachute, photo made by Mars Reconnaissance Orbiter](https://www.jpl.nasa.gov/spaceimages/details.php?id=PIA15978))
 
+# Dependency install
+
+Do install dependencies run
+
+`pip3 install -r requirements.txt`
+
+If pygame install fails with `Unable to run "sdl-config". Please make sure a development version of SDL is installed.` it is likely that you need to run also `sudo apt install libsdl1.2-dev`
+
+If Pygame complains about missing dependences you may want to install them using `sudo apt-get install python3-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev  libsdl1.2-dev libsmpeg-dev python-numpy subversion libportmidi-dev ffmpeg libswscale-dev libavformat-dev libavcodec-dev` (if on Ubuntu/Debian).
+
 # Maintenance commands
 
 ## Reformat code to follow Python coding standards
