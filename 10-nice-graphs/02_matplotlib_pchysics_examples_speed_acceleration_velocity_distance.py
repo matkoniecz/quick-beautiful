@@ -31,9 +31,20 @@ def main():
     datapoint_count = int(time/resolution) + 1
     datapoints = [d*resolution for d in range(datapoint_count)]
 
-    make_graphs("speed=10", datapoints, resolution, [0 for d in range(datapoint_count)], 10, 0)
+    make_graphs("speed=10000", datapoints, resolution, [0 for d in range(datapoint_count)], 10000, 0)
+    make_graphs("speed=0.1", datapoints, resolution, [0 for d in range(datapoint_count)], 0.1, 0)
+    make_graphs("speed=5", datapoints, resolution, [0 for d in range(datapoint_count)], 10, 0)
     make_graphs("speed=0", datapoints, resolution, [0 for d in range(datapoint_count)], 0, 0)
     make_graphs("acc=1", datapoints, resolution, [1 for d in range(datapoint_count)], 0, 0)
+
+    time = 5
+    datapoint_count = int(time/resolution) + 1
+    datapoints = [d*resolution for d in range(datapoint_count)]
+    make_graphs("speed=10, a=1", datapoints, resolution, [1 for d in range(int(datapoint_count))], 10, 0)
+
+    time = 30
+    datapoint_count = int(time/resolution) + 1
+    datapoints = [d*resolution for d in range(datapoint_count)]
     make_graphs("acc=-1, v0=10", datapoints, resolution, [-1 for d in range(datapoint_count)], 10, 0)
     
     time=20
@@ -52,25 +63,70 @@ def main():
     start_stop_acceleration.append(0)
     make_graphs("acc up and down", datapoints, resolution, start_stop_acceleration, 0, 0)
 
-
 def make_graphs(name, datapoints, resolution, acceleration_datapoints, speed_initial, distance_initial):
-    speed_computed = [speed_initial]
-    for index in range(len(datapoints)):
-        current = speed_computed[-1]
-        speed_computed.append(acceleration_datapoints[index]*resolution + current)
-    speed_computed = speed_computed[0:-1]
+    speed_computed = integrate_data(resolution, acceleration_datapoints, speed_initial)
+    distance_computed = integrate_data(resolution, speed_computed, distance_initial)
+    make_graph_column_packed(name, datapoints, acceleration_datapoints, speed_computed, distance_computed)
 
-    distance_computed = [distance_initial]
-    for index in range(len(datapoints)):
-        current = distance_computed[-1]
-        distance_computed.append(speed_computed[index]*resolution + current)
-    distance_computed = distance_computed[0:-1]
+def integrate_data(resolution, input_data, initial_input):
+    # for example acceleration datapoints as input_data
+    # speed as outpu
+    computed = [initial_input]
+    for index in range(len(input_data)):
+        current = computed[-1]
+        computed.append(input_data[index]*resolution + current)
+    return computed[0:-1]
 
+def make_graph_row_packed(name, datapoints, acceleration_datapoints, speed_datapoints, distance_datapoints):
+    plt.rcParams["figure.figsize"] = [20, 1]
+    plt.clf()
+    plt.subplot(1,3, 1)
+    plt.xlabel('t [s]')
+    plt.ylabel('v [m/s]')
+    plt.title("v(t)")
+    plt.plot(datapoints, speed_datapoints, 'r-')
+
+    plt.subplot(1,3, 2)
+    plt.xlabel('t [s]')
+    plt.ylabel('v [m/s^2]')
+    plt.title("a(t)")
+    plt.plot(datapoints, acceleration_datapoints, 'r-')
+
+    plt.subplot(1, 3, 3)
+    plt.xlabel('t [s]')
+    plt.ylabel('S [m]')
+    plt.title("S(t)")
+    plt.plot(datapoints, distance_datapoints, 'r-')
+    plt.savefig(name + '.png')
+
+def make_graph_column_packed(name, datapoints, acceleration_datapoints, speed_datapoints, distance_datapoints):
+    plt.rcParams["figure.figsize"] = [11, 14]
+    plt.clf()
+    plt.subplot(3,1,1)
+    plt.xlabel('t [s]')
+    plt.ylabel('v [m/s]')
+    plt.title("v(t)")
+    plt.plot(datapoints, speed_datapoints, 'r-')
+
+    plt.subplot(3,1,2)
+    plt.xlabel('t [s]')
+    plt.ylabel('v [m/s^2]')
+    plt.title("a(t)")
+    plt.plot(datapoints, acceleration_datapoints, 'r-')
+
+    plt.subplot(3,1,3)
+    plt.xlabel('t [s]')
+    plt.ylabel('S [m]')
+    plt.title("S(t)")
+    plt.plot(datapoints, distance_datapoints, 'r-')
+    plt.savefig(name + '.png')
+
+def make_graphs_separate(name, datapoints, acceleration_datapoints, speed_datapoints, distance_datapoints):
     plt.clf()
     plt.xlabel('t [s]')
     plt.ylabel('v [m/s]')
     plt.title("v(t)")
-    plt.plot(datapoints, speed_computed, 'r-')
+    plt.plot(datapoints, speed_datapoints, 'r-')
     plt.savefig(name + ' speed.png')
 
     plt.clf()
@@ -84,7 +140,7 @@ def make_graphs(name, datapoints, resolution, acceleration_datapoints, speed_ini
     plt.xlabel('t [s]')
     plt.ylabel('S [m]')
     plt.title("S(t)")
-    plt.plot(datapoints, distance_computed, 'r-')
+    plt.plot(datapoints, distance_datapoints, 'r-')
     plt.savefig(name + ' distance.png')
 
 main()
