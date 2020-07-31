@@ -1,6 +1,6 @@
-py-spy --flame before.svg -d 10 -- python3 01-pygame-game-of-life-limited-iterations.py
-py-spy --flame after.svg -d 10 -- python3 03-pygame-game-of-life-optimized-limited-iterations.py
-py-spy --flame without_white_on_white.svg -d 10 -- python3 04-stop-double-drawing.py
+py-spy record --output before.svg --duration 10 -- python3 01-pygame-game-of-life.py
+py-spy record --output after.svg --duration 10 -- python3 03-pygame-game-of-life-optimized-fail.py
+py-spy record --output without_white_on_white.svg --duration 10 -- python3 04-stop-double-drawing.py
 
 # note also poor man's sampling profiler - https://stackoverflow.com/questions/375913/how-can-i-profile-c-code-running-on-linux/378024#378024
 # tuna is a potential alternative
