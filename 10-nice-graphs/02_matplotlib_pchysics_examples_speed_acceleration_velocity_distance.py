@@ -1,16 +1,30 @@
 import matplotlib.pyplot as plt
-import seaborn as sns
+#import seaborn
 import numpy as np
 import sys
 import collections
 import functools
 
 def main():
-    plt.rcParams["figure.figsize"] = [8, 11]
     #plt.rcParams["figure.dpi"] = 60
     plt.rcParams["figure.autolayout"] = True # https://stackoverflow.com/questions/6774086/why-is-my-xlabel-cut-off-in-my-matplotlib-plot
     
-    plt.style.use('fivethirtyeight')
+    # https://python-graph-gallery.com/199-matplotlib-style-sheets/
+    # https://jakevdp.github.io/PythonDataScienceHandbook/04.11-settings-and-stylesheets.html
+    #plt.style.use('fivethirtyeight') # good for display on computer
+    #plt.style.use('grayscale') # "artistic"
+    plt.style.use('seaborn-whitegrid') # good for printing
+    #plt.style.use('seaborn-white')
+    
+    
+    #seaborn.set(rc={'patch.edgecolor':'brown', 'axes.edgecolor':'yellow', 'grid.color':'pink', 'figure.facecolor':'blue', 'axes.facecolor':'red'})
+    #style = seaborn.axes_style()
+    #style['axes.facecolor'] = "white"
+    #seaborn.set(rc=style)
+    #seaborn.set(rc={'axes.facecolor':'white', 'grid.color':'#aaaaaa'})
+    #print(seaborn.axes_style())
+
+
     plt.grid(True)
     resolution = 0.1
     time=10
