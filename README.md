@@ -85,7 +85,7 @@ More complicated case of recursion.
 
 # Beyond simple programs
 
-Note that simple programs like listed here are a great first step. But to really learn programing one needs also to be able to dive in large programs made by other people, to properly document changes. Basic skills like Git were not even mentioned here and are absolute necessity even for a hobbyist.
+Note that simple programs like listed here are a great first step. But to really learn programming one needs also to be able to dive in large programs made by other people, to properly document changes. Basic skills like Git were not even mentioned here and are absolute necessity even for a hobbyist.
 
 # Bonus
 
@@ -149,7 +149,7 @@ Some of them have extensive explanations making the useful on their own for the 
 
 Note that it is not a list of tutorials - I am rather looking for lists of interesting project ideas. It is necessary that these projects are doable by beginners (with a help from a tutor or on their own) and give impressive results.
 
-It may be in any programming, not only Python (though I think that Python is a great first programing language).
+It may be in any programming, not only Python (though I think that Python is a great first programming language).
 
 * [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
 * [Let's Learn Python!](http://www.letslearnpython.com/)
