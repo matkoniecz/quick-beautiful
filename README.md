@@ -31,7 +31,7 @@ Generation of beautiful Mandelbrot fractal. Demonstrates one of cases where vast
 
 ## Image generator
 
-Making an image out of simple shapes. For example group of dwarves in from of their home. Excellent situation to demonstrate why code reuse using functions is useful.
+Making an image out of simple shapes. For example group of dwarves in from of their home. Excellent situation to demonstrate why using functions to reuse code is useful.
 
 ![dwarves.png](dwarves.png)
 
