@@ -27,7 +27,7 @@ Standard hello world example.
 
 [code](01-mandelbrot)
 
-Generation of beautiful Mandelbrot fractal. Demonstrates one of cases where vast computing power of a computer allows to achieve results unfeasible with human computing power due to cost differences alone.
+Generation of beautiful [Mandelbrot fractal](https://en.wikipedia.org/wiki/Mandelbrot_set). Demonstrates one of cases where vast computing power of a computer allows to achieve results unfeasible with human computing power due to cost differences alone.
 
 ![mandelbrot.png](mandelbrot.png)
 
