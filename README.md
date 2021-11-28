@@ -25,11 +25,15 @@ Standard hello world example.
 
 ## Mandelbrot visualisation
 
+[code](01-mandelbrot)
+
 Generation of beautiful Mandelbrot fractal. Demonstrates one of cases where vast computing power of a computer allows to achieve results unfeasible with human computing power due to cost differences alone.
 
 ![mandelbrot.png](mandelbrot.png)
 
 ## Image generator
+
+[code](02-image-generator-making-dwarf-village)
 
 Making an image out of simple shapes. For example group of dwarves in from of their home. Excellent situation to demonstrate why using functions to reuse code is useful.
 
@@ -37,13 +41,19 @@ Making an image out of simple shapes. For example group of dwarves in from of th
 
 ## Lists and simple statistics
 
+[code](03-lists-and-simple-statistics)
+
 Introduction to lists - very basic level (showing list, looping through a list).
 
 ## Splitting text into words
 
+[code](04-splitting-text-into-words)
+
 Building function that will split text into words.
 
 ## Book statistics
+
+[code](05-book-statistics)
 
 Loading entire book and outputting statistics. Doing in minutes what before computers needed [years](https://en.wikipedia.org/wiki/Concordance_(publishing)).
 
@@ -73,11 +83,15 @@ Short texts covered by fair use:
 
 ## Maze generator
 
+[code](06-maze-generation)
+
 Maze generation, includes powerful example why classes are useful.
 
 ![maze_small.png](maze_small.png)
 
 ## Sierpiński's carpet
+
+[code](17-Sierpiński's-carpet)
 
 More complicated case of recursion.
 
