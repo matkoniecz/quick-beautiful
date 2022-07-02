@@ -1,3 +1,4 @@
+# pip3 install py-spy
 py-spy record --output before.svg --duration 10 -- python3 01-pygame-game-of-life.py
 py-spy record --output after.svg --duration 10 -- python3 03-pygame-game-of-life-optimized-fail.py
 py-spy record --output without_white_on_white.svg --duration 10 -- python3 04-stop-double-drawing.py
