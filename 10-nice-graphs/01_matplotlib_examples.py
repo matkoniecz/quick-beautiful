@@ -7,6 +7,7 @@ import functools
 def main():
     plt.rcParams["figure.figsize"] = [10, 10]
     # https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html
+    # see 02 file for more investigation
     plt.style.use('fivethirtyeight') # affects all charts, 'seaborn-v0_8-whitegrid' is also nice
     plt.grid(True)
     make_graph()
