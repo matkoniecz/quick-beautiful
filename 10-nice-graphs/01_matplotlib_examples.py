@@ -18,7 +18,10 @@ def main():
 def make_bargraph_with_merged_bars():
     plt.clf()
     plt.hist([1, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1,
-            1, 2, 3, 4, 5, 6, 1, 0, 10], bins=11)
+            1, 2, 3, 4, 5, 6, 1, np.nan, 10], bins=11) # np.nan is for missing data
+            # note poor out-of the box support for some graphs (look like 0)
+            # see for one of possible solutions at
+            # https://stackoverflow.com/questions/50821484/python-plotting-missing-data
     plt.savefig("bargraph_with_merged_bars.png")
     plt.show()
 
@@ -26,6 +29,7 @@ def make_bargraph_with_merged_bars():
 def make_graph():
     D = [2, 4, 6, 8, 10]
     A = [d*d*d for d in D]
+    A[3] = np.nan
     plt.clf()
     plt.xlabel('Ants')
     plt.ylabel('Potatoes')
@@ -45,7 +49,7 @@ def make_graph():
 def make_bargraph():
     objects = ('Six', 'Four', 'Two', 'Ten', 'One')
     y_pos = np.arange(len(objects))
-    performance = [6, 4, 2, 10, 1]
+    performance = [6, np.nan, 2, 10, 1]
     plt.clf()
     plt.bar(y_pos, performance, align='center', alpha=0.5)
     plt.xticks(y_pos, objects)
