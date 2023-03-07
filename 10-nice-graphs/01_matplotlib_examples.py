@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import seaborn as sns
 import numpy as np
 import sys
 import collections
@@ -7,7 +6,8 @@ import functools
 
 def main():
     plt.rcParams["figure.figsize"] = [10, 10]
-    plt.style.use('fivethirtyeight')
+    # https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html
+    plt.style.use('fivethirtyeight') # affects all charts, 'seaborn-v0_8-whitegrid' is also nice
     plt.grid(True)
     make_graph()
     make_bargraph()
