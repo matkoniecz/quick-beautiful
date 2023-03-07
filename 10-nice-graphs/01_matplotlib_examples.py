@@ -30,8 +30,14 @@ def make_graph():
     plt.xlabel('Ants')
     plt.ylabel('Potatoes')
     plt.title("Plot the estimate and real data, note drastic difference.")
-    plt.plot(D, [120*d+790 for d in D], 'r-')
-    plt.plot(D, A, 'kD')
+    plt.plot(D, [120*d+790 for d in D], 'r-') # r instructs to make red line
+    plt.plot(D, A, 'kD') # D instructs to make dots
+    # bo gives blue circle markers
+    # see
+    # plot(x, y, 'go--', linewidth=2, markersize=12)
+    # plot(x, y, color='green', marker='o', linestyle='dashed', linewidth=2, markersize=12)
+    # giving the same outcome
+    # see https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html
     plt.savefig('line_and_points.png')
     plt.show()
 
