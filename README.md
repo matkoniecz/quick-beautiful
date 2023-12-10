@@ -127,9 +127,9 @@ If Pygame complains about missing dependences you may want to install them using
 
 ## Detect code style issues
 
-`pylint **/*.py --include-naming-hint=y --variable-rgx="^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$" --argument-rgx="^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$" --disable=C0103,R0801`
+`pylint **/*.py --include-naming-hint=y --variable-rgx="^[a-z][a-z0-9]*((_[a-z0-9]+)*)?$" --disable=C0103,R0801`
 
-It includes a workaround for bug [#2018](https://github.com/PyCQA/pylint/issues/2018) and disables rule `C0103` with many false positives (too eager to convert variables into constants).
+It disables rule `C0103` with many false positives (too eager to convert variables into constants).
 
 Rule `R0801` is also disabled as it is not working properly due to specific repository format (many versions of the same code).
 
