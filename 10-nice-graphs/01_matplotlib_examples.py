@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
 import sys
 import collections
 import functools
@@ -18,7 +17,7 @@ def main():
 def make_bargraph_with_merged_bars():
     plt.clf()
     plt.hist([1, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1,
-            1, 2, 3, 4, 5, 6, 1, np.nan, 10], bins=11) # np.nan is for missing data
+            1, 2, 3, 4, 5, 6, 1, None, 10], bins=11) # None is for missing data
             # note poor out-of the box support for some graphs (look like 0)
             # see for one of possible solutions at
             # https://stackoverflow.com/questions/50821484/python-plotting-missing-data
