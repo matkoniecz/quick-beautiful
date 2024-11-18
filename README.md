@@ -149,7 +149,7 @@ Command based on one by [Jim Lewis](https://stackoverflow.com/a/10523492/4130619
 
 # Skipped concepts
 
-Some more advanced techniques were ignored in code presented here, despite that code may be a bit cleaner.
+Some more advanced techniques were ignored in code presented here, despite that code may be a bit cleaner with them.
 
 For example `if __name__ == '__main__'` is skipped in most of examples.
 
