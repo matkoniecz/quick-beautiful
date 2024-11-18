@@ -41,6 +41,7 @@ def make_graph():
     # plot(x, y, color='green', marker='o', linestyle='dashed', linewidth=2, markersize=12)
     # giving the same outcome
     # see https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html
+    # https://matplotlib.org/2.0.2/api/pyplot_api.html#matplotlib.pyplot.colors
     plt.savefig('line_and_points.png')
     plt.show()
 
